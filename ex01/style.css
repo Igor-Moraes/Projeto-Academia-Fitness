@@ -1,0 +1,64 @@
+body {
+background-color: lightblue;
+
+
+}
+.card {
+background-color: rgb(255, 255, 255);
+padding: 15px;
+width: 205vh;
+border-radius: 10px;
+border: 2px solid black;
+height: 410px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+transform: translateY(-20px);
+box-shadow: 0 8px 15px black ;
+
+}
+
+.img1 {
+    max-width: 100%;
+    width: 35vh;
+    margin-left: 80vh;
+    height: auto;
+    border-radius: 50px;
+}
+p {
+    font-size: larger; 
+    font-family: Arial;
+}
+
+h1 {
+    font-family: Arial;
+}
+
+h2 {
+    font-family: Arial;
+}
+
+.card a {
+
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: lightblue;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    font-size: large;
+    font-family: Arial;
+}
+
+.card a:active {
+    background-color: rgb(6, 107, 138);
+    color: white;
+}
+.img2 {
+width: 30px;
+height: auto;;
+}
