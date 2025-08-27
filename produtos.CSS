@@ -1,0 +1,114 @@
+body { /* Estilos globais, do corpo todo do site */
+ font-family: 'Roboto', sans-serif;
+ background-color: #0D0D0D;
+color: #FFFFFF;  
+margin: 0; 
+}
+
+header {   /* Estilos do cabeçário */
+height: 100vh; /* Altura do cabeçalho */
+background: url(ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
+display:flex ; /* Usando flexbox para alinhar os itens no centro */
+flex-direction: column; /* Itens em coluna */
+justify-content: center;    /* Centraliza verticalmente */
+align-items: center; /* Centraliza horizontalmente */
+text-align: center ; /* Centraliza o texto */
+}
+
+header h1 { /* Estilos do título principal no cabeçário */
+    font-size: 5rem;
+    font-family: 'Bebas Neue', sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav ul { /* Estilos do menu de navegação */
+background-color: #1a1a1a;
+text-decoration: none;
+list-style: none; /* Remove os marcadores da lista */
+margin: 0; /* Remove a margem padrão */
+padding: 0; /* Remove o padding padrão */
+display: flex;
+align-items: flex-start; /* Alinha os itens no início */
+position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+}
+
+nav li {
+position: relative; 
+}
+
+nav > ul > li { /* Estilos dos itens principais do menu */
+margin: 0 ;
+}
+
+nav a {   /* Estilos dos links do menu */
+display: block; /* Faz o link ocupar todo o espaço do item da lista */
+padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+text-decoration: none;
+color: #FFFFFF;
+transition: 0.3s;
+border-radius: 20px;
+cursor: pointer;
+}
+
+nav a:hover {
+background-color: #E50914;
+box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+}
+/* Estilo do submenu */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    min-width: 180px;
+    flex-direction: column;
+    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
+    width: 180px; 
+    border-radius: 20px; 
+}
+
+nav ul ul li {
+width: 100%;
+}
+
+nav ul ul a {
+padding: 12px 15px;
+}
+
+nav li:hover > ul  {
+display: block;
+
+nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
+    display: block;
+}
+}
+
+nav img {
+width:50px;
+height: auto;
+
+}
