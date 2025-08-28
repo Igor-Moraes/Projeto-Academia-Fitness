@@ -76,7 +76,7 @@ height: auto;
 
 header {   /* Estilos do cabeçário */
 height: 120vh; /* Altura do cabeçalho */
-background: url(musc.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
+background: url(imagens/musc.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
 display:flex ; /* Usando flexbox para alinhar os itens no centro */
 flex-direction: column; /* Itens em coluna */
 justify-content: center;    /* Centraliza verticalmente */
