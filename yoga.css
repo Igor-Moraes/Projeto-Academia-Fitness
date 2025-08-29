@@ -111,9 +111,3 @@ transform: translateY(-5px);
  border: 2px solid rgba(255, 255, 255, 0.3); /* borda branca transparente */
 }
 
-header img { /* Estilos da imagem no cabeçário */
-width: 150px;
-height: auto;
-
-
-}

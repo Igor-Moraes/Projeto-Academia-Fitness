@@ -36,11 +36,6 @@ margin: 20px 0 ;
 }
 
 
-header img { /* Estilos da imagem no cabeçário */
-width: 150px;
-height: auto;
-}
-
 nav ul { /* Estilos do menu de navegação */
 background-color: #1a1a1a;
 text-decoration: none;
