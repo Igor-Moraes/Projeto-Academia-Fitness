@@ -156,19 +156,19 @@ margin: 0;
 .cards {
 display: grid;  /* Usando grid layout, que separa os cards em linhas e colunas */
  grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
-gap: 20px; /* Espaçamento entre os cards */
+gap: 15px; /* Espaçamento entre os cards */
 margin-top: 40px; /* Espaçamento acima dos cards */
 justify-items: center; /* Centraliza os cards horizontalmente*/
 text-align: center;
 font-size: large;
-margin: 30px 15px; /* Espaçamento ao redor dos cards , "30px" é margem em cima e embaixo, "15px" é margem nas laterais */
+margin: 30px 10px; /* Espaçamento ao redor dos cards , "30px" é margem em cima e embaixo, "10px" é margem nas laterais */
 }
 
 .card {
 background-color: #2E2E2E;
 border-radius: 20px;
 transition: 0.3s; /* Transição suave para o efeito hover */
-padding: 30px 40px; /* Espaçamento interno do card */
+padding: 30px 35px; /* Espaçamento interno do card */
 width: 250px; /* Largura fixa para os cards */
 }
 
