@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="contato.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function enviarMensagem() {
+            alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+        }
+    </script>
     <title>Contato - Complexo Maromba</title>
     
 </head>
@@ -65,7 +70,7 @@
           <label for="message">Mensagem</label>
           <textarea id="message" name="message" rows="4" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        <button onclick="enviarMensagem()" type="submit" class="btn btn-primary">Enviar Mensagem</button>
       </form>
     </div>
   </section>
