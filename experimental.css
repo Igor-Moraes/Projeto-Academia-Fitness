@@ -1,3 +1,35 @@
+/* Layout lado a lado */
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.caixa-resultado {
+    min-width: 320px;
+    max-width: 400px;
+    background: #232323;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #0008;
+    padding: 32px 24px;
+    margin-top: 0;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.caixa-resultado #fechar {
+    align-self: flex-end;
+    cursor: pointer;
+    color: #E50914;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
 body { /* Estilos globais, do corpo todo do site */
  font-family: 'Roboto', sans-serif;
  background-color: #0D0D0D;
@@ -5,8 +37,8 @@ color: #FFFFFF;
 margin: 0; 
 }
     header {   /* Estilos do cabeçário */
-height: 100vh; /* Altura do cabeçalho */
-background: url(imagens/ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
+height: 120vh; /* Altura do cabeçalho */
+background: url(imagens/aula2.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
 display:flex ; /* Usando flexbox para alinhar os itens no centro */
 flex-direction: column; /* Itens em coluna */
 justify-content: center;    /* Centraliza verticalmente */
@@ -14,25 +46,25 @@ align-items: center; /* Centraliza horizontalmente */
 text-align: center ; /* Centraliza o texto */
 }
 
-header h1 { /* Estilos do título principal no cabeçário */
-    font-size: 4rem;
-    font-family: 'Bebas Neue', sans-serif;
-      color: #FFFFFF;
-      margin: 0;
-
-}
 
 header h2 { /* Estilos do subtítulo no cabeçário */
- margin: 10px 0 20px 0;
+ margin-top: 70vh;
 font-size: 2rem;
- color: #E50914;
+ color: #FFFFFF;
    
 }
 
 header p { /* Estilos do parágrafo no cabeçário */
    color: #B3B3B3;
 font-size: 1.5rem;
-margin: 20px 0 ;
+margin: 10px 0 ;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 70vh;
+    position: absolute;
 }
 
 
@@ -103,4 +135,69 @@ nav img {
 width:50px;
 height: auto;
 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #181818;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #0008;
+}
+
+form h2 {
+color: #B3B3B3;
+font-size: 3rem;
+}
+
+main {
+    padding: 20px;
+    background: #121212;
+    min-height: 100vh;
+}
+
+form  {
+width: 200vh;
+
+
+}
+form label {
+    color: #E50914;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    align-self: flex-start;
+}
+
+form input,
+form select {
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #222;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #E50914;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #b0060f;
 }

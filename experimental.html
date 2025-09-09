@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
@@ -11,12 +12,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="experimental.css">
+    <script src="experimental.js"></script>
     <title>Aula experimental</title>
 </head>
+
 <body>
-     <nav>
+    <nav>
         <ul>
-            <li><img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo"></li> <!--Logo da empresa no menu-->
+            <li><img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo">
+            </li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
             <li> <a href="index.html">Início</a> </li>
             <li>
@@ -32,17 +36,72 @@
                 </ul>
             </li>
             <li>
-                <a href="#Contatos">Contatos</a>
-                <ul>
-                    <li> <a href="#Diretoria">Diretoria</a> </li>
-                    <li> <a href="#Personal">Personal trainer</a> </li>
-                </ul>
+                <a href="contato.html">Contatos</a>
+            </li>
+            <li>
+                <a href="experimental.html">Aula experimental</a>
             </li>
             <li> <a href="#Sobre">Sobre</a></li>
         </ul>
     </nav>
     <header>
-        <h1>Bem-vindo à Aula Experimental</h1>
+        <img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo">
+        <h2>Seja bem-vindo ao cadastro da aula experimental</h2>
+        <p>Está é área do site em que você pode se cadastrar para participar da aula experimental da modalidade que
+            quiser, basta preencher o formulário abaixo.</p>
     </header>
+    <main>
+        <div class="form-container">
+            <form onsubmit="cadastroForm(event)">
+                <h2>Formulário de Cadastro</h2>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                <label for="modalidade">Modalidade de Interesse:</label>
+                <select id="modalidade" name="modalidade" required>
+                    <option value="">Selecione uma modalidade</option>
+                    <option value="musculacao">Musculação</option>
+                    <option value="crossfit">Cross Fit</option>
+                    <option value="yoga">Yoga</option>
+                    <option value="personal">Personal Trainer</option>
+                    <option value="nutricionista">Nutricionista</option>
+                </select>
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                    title="Formato: 000.000.000-00">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecione um gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label for="foto">Foto (Opcional):</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <label for="confirmar_senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                <button type="submit" id="cadastro">Cadastrar</button>
+
+            </form>
+            <div id="resultado" class="caixa-resultado" style="display:none;"></div>
+        </div>
+        <div id="mensagem"><!-- Mensagem de sucesso ou erro será exibida aqui -->
+
+
+
+        </div>
+
+    </main>
+
 </body>
+
 </html>

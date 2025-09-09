@@ -138,7 +138,9 @@ height: auto;
    padding: 40px 40px;
    background-color: #1a1a1a;
    border-radius: 10px;
-   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+   box-shadow: 0 2px 10px rgba(94, 92, 92, 0.5);
+   margin: 0 0 0 45vh;
+    max-width: 600px;
 }
 .contact-form label {
     display: block;
@@ -147,12 +149,17 @@ height: auto;
     color:#E50914;
     margin: 20px 0;
     font-size: 2rem;;
+    text-align: left;
+    
 }
 .form-group input {
     margin-bottom: 20px;
     width: 100%;
     padding: 10px 0;
     font-size: large;
+    box-sizing: border-box;
+    background: #333;
+    color: #FFFFFF;
 }
 
 .form-group textarea { /* Estilos do textarea, da "Mensagem"*/
@@ -162,6 +169,8 @@ height: auto;
     margin-bottom: 20px;
     resize: vertical; /* Permite redimensionar verticalmente */
     min-height: 100px; /* Altura mínima do textarea */
+    background-color: #333;
+    color: #FFFFFF;
 }
 button {
     background-color: #E50914;
