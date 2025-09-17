@@ -216,3 +216,68 @@ font-size: 2em;
 margin-bottom: 70px;
 font-weight: bold;
 }
+
+/* ======== AJUSTES RESPONSIVOS ======== */
+html {
+  font-size: 100%;
+}
+
+/* Imagens se adaptarem ao tamanho da tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Em telas até 1024px (tablets) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header h2 {
+    font-size: 1.8rem;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
+  }
+}
+
+/* Em telas até 768px (celulares em paisagem) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Menu empilhado */
+    align-items: center;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .cards {
+    grid-template-columns: 1fr; /* 1 coluna de card */
+  }
+}
+
+/* Em telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  header {
+    padding: 40px 15px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header h2 {
+    font-size: 1.2rem;
+  }
+  .botao {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
