@@ -1,61 +1,143 @@
-body { /* Estilos globais, do corpo todo do site */
- font-family: 'Roboto', sans-serif;
- background-color: #0D0D0D;
-color: #FFFFFF;  
-margin: 0; 
+/* Responsividade para imagem de fundo do header */
+@media (max-width: 1024px) {
+    header {
+        background: url('imagens/wheyFundo.png') no-repeat left/cover, url('imagens/wheyFundo2.png') no-repeat right/cover;
+        background-size: 60% 100%, 100% 100%;
+        background-position: left top, right top;
+        max-width: 100vw;
+    }
 }
 
-header {   /* Estilos do cabeçário */
-height: 100vh; /* Altura do cabeçalho */
-background: url(imagens/ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
-display:flex ; /* Usando flexbox para alinhar os itens no centro */
-flex-direction: column; /* Itens em coluna */
-justify-content: center;    /* Centraliza verticalmente */
-align-items: center; /* Centraliza horizontalmente */
-text-align: center ; /* Centraliza o texto */
+@media (max-width: 600px) { 
+    header {
+        background: url('imagens/wheyFundo2.png') no-repeat center/cover !important;
+        background-size: cover !important;
+        background-position: center top !important;
+        min-height: 60vh;
+        flex-direction: column;
+        padding: 24px 0;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+        padding: 0 8px;
+    }
 }
 
-header h1 { /* Estilos do título principal no cabeçário */
+body {
+    /* Estilos globais, do corpo todo do site */
+    font-family: 'Roboto', sans-serif;
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+header {
+    /* Estilos do cabeçário */
+    height: 100vh;
+    /* Altura do cabeçalho */
+    background: url('imagens/wheyFundo.png') no-repeat left/cover, url('imagens/wheyFundo2.png') no-repeat right/cover;
+    /* Imagem de fundo do cabeçalho */
+    ;
+    background-size: 40%, 70% 100%;
+    /* Ajusta o tamanho da imagem de fundo */
+    display: flex;
+    /* Usando flexbox para alinhar os itens no centro */
+    flex-direction: column;
+    /* Itens em coluna */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+header h1 {
+    /* Estilos do título principal no cabeçário */
     font-size: 5rem;
     font-family: 'Bebas Neue', sans-serif;
-      color: #FFFFFF;
-      margin: 0;
+    color: #FFFFFF;
+    margin: 0;
 
 }
 
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+header h2 {
+    /* Estilos do subtítulo no cabeçário */
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #E50914;
+    margin: 20px 0 0 0;
+    /* Espaçamento acima do subtítulo */
+    max-width: 900px;
+    /* Limita a largura máxima do subtítulo */
+    padding: 0 20px;
+    /* Adiciona padding lateral para melhor visualização em telas menores */
+}
+
+header p {
+font-size: 1.2rem;
+max-width: 1000px;
+padding: 0 20px;
+color: #e0dddd;
+}
+
+.header-content {
+    border: 2px solid #E50914;
+    padding: 5px;
+    border-radius: 10px;
+    border-bottom: 5px solid #B20710;
+    background-color: rgba(13, 13, 13, 0.5); /* Fundo semi-transparente para melhor leitura */
+}
+nav ul {
+    /* Estilos do menu de navegação */
+    background-color: #1a1a1a;
+    text-decoration: none;
+    list-style: none;
+    /* Remove os marcadores da lista */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o padding padrão */
+    display: flex;
+    align-items: flex-start;
+    /* Alinha os itens no início */
+    position: relative;
+    /* Necessário para o posicionamento absoluto do submenu */
 }
 
 nav li {
-position: relative; 
+    position: relative;
 }
 
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
+nav>ul>li {
+    /* Estilos dos itens principais do menu */
+    margin: 0;
 }
 
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
+nav a {
+    /* Estilos dos links do menu */
+    display: block;
+    /* Faz o link ocupar todo o espaço do item da lista */
+    padding: 15px 20px;
+    /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: 0.3s;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+    background-color: #E50914;
+    box-shadow: 2px 6px red;
+    /* Sombra do botão ao passar o mouse */
 }
+
 /* Estilo do submenu */
 nav ul ul {
     display: none;
@@ -65,29 +147,32 @@ nav ul ul {
     background: #333;
     min-width: 180px;
     flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
+    z-index: 1000;
+    /* Garante que o submenu fique acima de outros elementos */
+    width: 180px;
+    border-radius: 20px;
 }
 
 nav ul ul li {
-width: 100%;
+    width: 100%;
 }
 
 nav ul ul a {
-padding: 12px 15px;
+    padding: 12px 15px;
 }
 
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
+nav li:hover>ul {
     display: block;
-}
+
+    nav li:focus-within>ul {
+        /* Permite que o submenu seja acessível via teclado */
+        display: block;
+    }
 }
 
 nav img {
-width:50px;
-height: auto;
+    width: 50px;
+    height: auto;
 
 }
+
