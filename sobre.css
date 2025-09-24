@@ -278,3 +278,8 @@ section li{
     .faq-item.active .icon {
       transform: rotate(180deg);
     }
+    article video{
+   text-align: center;
+   margin-left: 110px;
+   height: auto;
+    }

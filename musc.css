@@ -109,23 +109,18 @@ margin: 20px 0 ;
         h1 {
             color: #ff0202;
         }
+        h2 {
+            color: #df0202;
+            margin-top: 30px;
+        }
 
         .call-to-action {
             margin: 30px 0;
-        }
-
-        .btn {
-            background-color: #f76b6b;
-            color: #fff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            text-align: center;
         }
 
         .btn:hover {
-            background-color: #303f9f;
+            background-color: #353535;
         }
 
         .features {
@@ -133,6 +128,7 @@ margin: 20px 0 ;
             justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 40px;
+            
 
         }
 
@@ -144,3 +140,44 @@ margin: 20px 0 ;
         .feature-item h3 {
             color: #6d0505;
         }
+
+        .selfie {
+            width: 200px;
+            height: auto;
+            margin-top: -2px;
+        }
+       .gif {
+            width: 130px;
+            height: auto;
+            
+        }
+article {
+    background-color: #f84545;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+.call {
+    text-align: center;
+    margin-top: 10px;
+    padding: 30px;
+    background-color: #ff4500;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #111111;
+    padding: 12px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
