@@ -152,24 +152,30 @@ margin: 20px 0 ;
             
         }
 article {
-    background-color: #f84545;
+    background-color: #c20101;
     padding: 20px;
-    border-radius: 8px;
     margin-top: 20px;
     text-align: center;
+    margin-bottom: auto;
 }
 
+article h2 {
+    color: #000000;
+}
 
 
 .call {
     text-align: center;
-    margin-top: 10px;
+    margin-top: auto;
     padding: 30px;
-    background-color: #ff4500;
+    height: auto;
+    background-color: #972b04;
     color: #fff;
-    border-radius: 8px;
 }
 
+.call h2 {
+    color: black;
+}
 .btn {
     display: inline-block;
     background-color: #fff;
@@ -181,3 +187,6 @@ article {
     transition: background-color 0.3s, color 0.3s;
 }
 
+video {
+    margin-left: 6vh;
+}

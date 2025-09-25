@@ -155,6 +155,11 @@ height: auto;
     text-align: center;
     flex-basis: calc(33.333% - 20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.team-member:hover {
+    background-color:#ff4500;
+
 }
 
 .team-member img {
@@ -165,6 +170,7 @@ height: auto;
     border: 3px solid #ff4500;
     margin-bottom: 10px;
 }
+
 .call h3{
     color: rgb(68, 3, 3);
 }
