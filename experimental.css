@@ -37,8 +37,8 @@ color: #FFFFFF;
 margin: 0; 
 }
     header {   /* Estilos do cabeçário */
-height: 120vh; /* Altura do cabeçalho */
-background: url(imagens/aula2.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
+height: 98vh; /* Altura do cabeçalho */
+background: url(imagens/Gemini_Generated_Image_9gccah9gccah9gcc.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
 display:flex ; /* Usando flexbox para alinhar os itens no centro */
 flex-direction: column; /* Itens em coluna */
 justify-content: center;    /* Centraliza verticalmente */
@@ -46,9 +46,15 @@ align-items: center; /* Centraliza horizontalmente */
 text-align: center ; /* Centraliza o texto */
 }
 
+header h1 {
+    color:#E50914 ;
+    font-size: 6rem;
+    margin: 0;
+    margin-top: 90px
+}
+
 
 header h2 { /* Estilos do subtítulo no cabeçário */
- margin-top: 70vh;
 font-size: 2rem;
  color: #FFFFFF;
    
@@ -57,13 +63,13 @@ font-size: 2rem;
 header p { /* Estilos do parágrafo no cabeçário */
    color: #B3B3B3;
 font-size: 1.5rem;
-margin: 10px 0 ;
+
 }
 
 header img {
     width: 150px;
     height: auto;
-    margin-bottom: 70vh;
+    margin-bottom: 50vh;
     position: absolute;
 }
 
