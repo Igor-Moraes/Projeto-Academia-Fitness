@@ -5,7 +5,7 @@ color: #FFFFFF;
 margin: 0; 
 }
 
-header {   /* Estilos do cabeçário */
+.cabecario {   /* Estilos do cabeçário */
 height: 100vh; /* Altura do cabeçalho */
 background: url(imagens/ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
 display:flex ; /* Usando flexbox para alinhar os itens no centro */
@@ -15,7 +15,7 @@ align-items: center; /* Centraliza horizontalmente */
 text-align: center ; /* Centraliza o texto */
 }
 
-header h1 { /* Estilos do título principal no cabeçário */
+.cabecario h1 { /* Estilos do título principal no cabeçário */
     font-size: 4rem;
     font-family: 'Bebas Neue', sans-serif;
       color: #FFFFFF;
@@ -23,14 +23,14 @@ header h1 { /* Estilos do título principal no cabeçário */
 
 }
 
-header h2 { /* Estilos do subtítulo no cabeçário */
+.cabecario h2 { /* Estilos do subtítulo no cabeçário */
  margin: 10px 0 20px 0;
 font-size: 2rem;
  color: #E50914;
    
 }
 
-header p { /* Estilos do parágrafo no cabeçário */
+.cabecario p { /* Estilos do parágrafo no cabeçário */
    color: #B3B3B3;
 font-size: 1.5rem;
 margin: 20px 0 ;
@@ -54,7 +54,7 @@ background-color:#B20810 ; /* Muda a cor de fundo ao passar o mouse */
 
 }
 
-header img { /* Estilos da imagem no cabeçário */
+.cabecario img { /* Estilos da imagem no cabeçário */
 width: 150px;
 height: auto;
 
