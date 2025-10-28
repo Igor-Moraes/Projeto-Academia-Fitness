@@ -33,7 +33,7 @@ font-size: 2rem;
 .cabecario p { /* Estilos do parágrafo no cabeçário */
    color: #B3B3B3;
 font-size: 1.5rem;
-margin: 20px 0 ;
+margin: 20px 10px ;
 }
 
 .botao { /* Estilos do botão no cabeçário */
@@ -281,3 +281,4 @@ img {
     font-size: 1rem;
   }
 }
+
