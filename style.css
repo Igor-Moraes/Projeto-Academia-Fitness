@@ -162,7 +162,7 @@ justify-items: center; /* Centraliza os cards horizontalmente*/
 text-align: center;
 font-size: large;
 margin: 30px 10px; /* Espaçamento ao redor dos cards , "30px" é margem em cima e embaixo, "10px" é margem nas laterais */
-}
+  }
 
 .card {
 background-color: #2E2E2E;
@@ -186,7 +186,7 @@ font-size: 1.3em;
 }
 
 footer  { /* Estilos do rodapé */
-background-color:#E50914   ;
+background: linear-gradient(#E50914, #6e0000);
 align-items: center;
 text-align: center;
 padding: 50px 20px;

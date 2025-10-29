@@ -207,3 +207,40 @@ form button {
 form button:hover {
     background: #b0060f;
 }
+
+
+.exp-footer {
+    background: linear-gradient(#E50914, #6e0000);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    margin: 30px 0 0 0;
+}
+
+.exp-footer h2 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.exp_footer {
+    background-color: #444040;
+    color: #ffffff;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
+    margin: 10px;
+}
+
+.exp_footer:hover {
+    background-color: #000000;
+    color: #c40808;
+    transform: scale(1.05);
+}
