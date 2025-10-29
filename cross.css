@@ -108,3 +108,29 @@ header p:hover {
   display: inline-block; /* borda ajusta só ao tamanho do texto */
 
 }
+
+.crossfit {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.crossfit h2 {
+  border: 2px solid #FFD600;
+  padding: 20px;
+  border-bottom: 5px solid #FFD600;
+  border-radius: 20px;
+  color: #CCCCCC;
+
+}
+
+.crossfit p {
+  margin-top: 50px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #CCCCCC;
+    border-left: 3px solid #FFD600;
+}

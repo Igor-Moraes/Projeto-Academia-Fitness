@@ -484,3 +484,38 @@ border: 2px solid #858585;
     display: flex;
     flex-direction: row;
 }
+
+.exp {
+background: linear-gradient( #E50914, #6e0000);
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+margin: 30px 0 0 0;
+}
+
+.exp h2 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.btn-exp {
+    background-color: #444040;
+    color: #ffffff;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
+    margin: 10px;
+}
+
+.btn-exp:hover {
+    background-color: #000000;
+    color: #c40808;
+    transform: scale(1.05);
+}

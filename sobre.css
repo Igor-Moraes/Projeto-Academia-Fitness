@@ -223,69 +223,13 @@ section li{
     color: whitesmoke;
 }
 
-/* parte das perguntas*/
-.faq-container {
-      max-width: 700px;
-      margin: 40px auto;
-    }
 
-    .faq-container h2 {
-        color: #E50914;
-        text-align: center;
-        margin-bottom: 3vh;
-        font-size: 2em;
-        border: 2px solid #E50914;
-        border-radius: 10px;
-        border-bottom: 4px solid #E50914;
-        padding: 10px;
- }
-
-    .faq-item {
-      background: #1a1a1a;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      overflow: hidden;
-    }
-
-    .faq-question {
-      background: #E50914;
-      padding: 15px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      padding: 0 15px;
-    }
-
-    .faq-answer p {
-      margin: 10px 0;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 400px;
-      padding: 15px;
-    }
-
-    .icon {
-      font-size: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.active .icon {
-      transform: rotate(180deg);
-    }
     article video{
    text-align: center;
    margin-left: 110px;
    height: auto;
     }
+
+
+
+             
