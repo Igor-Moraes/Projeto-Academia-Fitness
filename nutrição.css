@@ -232,7 +232,6 @@ nav img {
     align-items: center;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeUp 0.8s ease-out forwards;
     padding: 0 0 20px 0;
 }
 
@@ -254,6 +253,11 @@ nav img {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* animação para os cards dos nutricionistas quando entram na viewport */
+.nutri-consultation.in-view {
+    animation: fadeUp 0.8s ease-out forwards;
 }
 
 .nutri-consultation h3 {
@@ -297,8 +301,9 @@ nav img {
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: slideIn 1s ease-out;
     position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 @keyframes slideIn {
@@ -313,7 +318,6 @@ nav img {
     }
 }
 
-/* Adiciona linha decorativa animada abaixo do título */
 #nutricionistas h2::after {
     content: '';
     display: block;
@@ -321,7 +325,15 @@ nav img {
     height: 4px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
     margin: 10px auto 0;
-    animation: lineGrow 1.5s ease-out forwards;
+}
+
+/* animação do título e da linha serão ativadas quando a classe .in-view for adicionada */
+#nutricionistas h2.in-view {
+    animation: slideIn 0.9s ease-out forwards;
+}
+
+#nutricionistas h2.in-view::after {
+    animation: lineGrow 1.2s ease-out forwards;
 }
 
 @keyframes lineGrow {
@@ -391,7 +403,6 @@ nav img {
     border-left: #E50914 5px solid;
     opacity: 0;
     transform: translateY(30px);
-    animation: cardFadeIn 0.8s ease-out forwards;
 }
 
 #depoimento-container .depoimento-card:nth-child(1) {
@@ -436,6 +447,11 @@ nav img {
     margin: 0;
 }
 
+/* animação ativada via classe adicionada pelo JS */
+.depoimento-card.in-view {
+    animation: cardFadeIn 0.8s ease-out forwards;
+}
+
 
 #depoimento-container {
     display: flex;
@@ -462,4 +478,40 @@ nav img {
     .depoimentos {
         padding: 30px 12px;
     }
+}
+
+.nutri-exp {
+    background: linear-gradient(#E50914, #6e0000);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    margin: 30px 0 0 0;
+}
+
+.nutri-exp h2 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.nutri_exp {
+    background-color: #444040;
+    color: #ffffff;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
+    margin: 10px;
+}
+
+.nutri_exp:hover {
+    background-color: #000000;
+    color: #c40808;
+    transform: scale(1.05);
 }

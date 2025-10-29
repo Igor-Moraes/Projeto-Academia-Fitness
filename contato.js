@@ -7,7 +7,7 @@ if (nome === "" || email === "" || mensagem === "") {
 alert("Por favor, preencha todos os campos antes de enviar a mensagem.");
 } else {
 alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-}
+} 
 
 console.log("Nome: " + nome);
 console.log("E-mail: " + email);
