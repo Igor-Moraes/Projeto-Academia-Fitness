@@ -215,3 +215,88 @@ margin: 30px 0 0 0;
     box-shadow: 0 0 15px #FFD600;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* Em telas até 1024px (tablets) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header h2 {
+    font-size: 1.8rem;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
+  }
+  nav a {
+    font-size: 1.5rem;
+    padding: 12px 15px;
+  }
+}
+
+/* Em telas até 768px (celulares em paisagem) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Menu empilhado */
+    align-items: center;
+  }
+  nav a {
+    width: 80%;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav ul ul {
+    position: static; /* Submenu posicionado estaticamente */
+    text-align: left;
+    align-items: left;
+    justify-content: left;
+  }
+nav li {
+  text-align: left;
+}
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .cards {
+    grid-template-columns: 1fr; /* 1 coluna de card */
+  }
+}
+
+/* Em telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  header {
+    padding: 100px 15px;
+    height: 90%;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header h2 {
+    font-size: 1.2rem;
+  }
+  .botao {
+    padding: 12px 25px;
+    font-size: 1rem;
+    margin: 0 0 55px 0;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  header img {
+    margin: 15vh 0 0 0;
+    width : 50%; 
+  }
+}

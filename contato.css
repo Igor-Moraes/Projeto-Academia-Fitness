@@ -223,3 +223,108 @@ button:hover {
     color: #c40808;
     transform: scale(1.05);
 }
+
+/* Em telas até 1024px (tablets) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  header p {
+    font-size: 1.8rem;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
+  }
+  nav a {
+    font-size: 1.5rem;
+    padding: 12px 15px;
+  }
+  form {
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+    position: relative;
+    right: 33vw;
+  }
+}
+
+/* Em telas até 768px (celulares em paisagem) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Menu empilhado */
+    align-items: center;
+  }
+  nav a {
+    width: 80%;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav ul ul {
+    position: static; /* Submenu posicionado estaticamente */
+ 
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .cards {
+    grid-template-columns: 1fr; /* 1 coluna de card */
+  }
+  form {
+    margin: 0 auto;
+    width: 60%;
+    display: block;
+    position: relative;
+    right: 32vw;
+  }
+}
+
+/* Em telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  header {
+    padding: 100px 15px;
+    height: 90%;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header h2 {
+    font-size: 1.2rem;
+  }
+  .botao {
+    padding: 12px 25px;
+    font-size: 1rem;
+    margin: 0 0 55px 0;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  header img {
+    margin: 15vh 0 0 0;
+    width : 50%; 
+  }
+  form {
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+    position: relative;
+    right: 32vw;
+  }
+  footer {
+    font-size: 0.6rem;
+  }
+}
