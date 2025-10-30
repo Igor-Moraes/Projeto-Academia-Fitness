@@ -548,17 +548,9 @@ header {
     align-items: center;
   }
   nav a {
-    width: 80%;
-    text-align: left;
-    justify-content: left;
-    align-items: left;
-    margin-left: 0;
     font-size: 1.2rem;
   }
 
-  nav li {
-    width: 100%;
-  }
 
   nav ul ul {
     position: static; /* Submenu posicionado estaticamente */
