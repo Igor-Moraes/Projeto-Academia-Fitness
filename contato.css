@@ -126,6 +126,8 @@ height: auto;
     padding: 30px 40px;
     align-items: center;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .container h2 {
@@ -139,8 +141,8 @@ height: auto;
    background-color: #1a1a1a;
    border-radius: 10px;
    box-shadow: 0 2px 10px rgba(94, 92, 92, 0.5);
-   margin: 0 0 0 47vh;
     max-width: 600px;
+    width:50vw;
 }
 .contact-form label {
     display: block;
