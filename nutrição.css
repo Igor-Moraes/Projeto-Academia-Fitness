@@ -1,3 +1,5 @@
+
+
 .nutri-header {
     display: flex;
     flex-direction: column;
@@ -128,88 +130,6 @@ body {
     color: #fff;
 }
 
-nav ul {
-    /* Estilos do menu de navegação */
-    background-color: #1a1a1a;
-    text-decoration: none;
-    list-style: none;
-    /* Remove os marcadores da lista */
-    margin: 0;
-    /* Remove a margem padrão */
-    padding: 0;
-    /* Remove o padding padrão */
-    display: flex;
-    align-items: flex-start;
-    /* Alinha os itens no início */
-    position: relative;
-    /* Necessário para o posicionamento absoluto do submenu */
-}
-
-nav li {
-    position: relative;
-}
-
-nav>ul>li {
-    /* Estilos dos itens principais do menu */
-    margin: 0;
-}
-
-nav a {
-    /* Estilos dos links do menu */
-    display: block;
-    /* Faz o link ocupar todo o espaço do item da lista */
-    padding: 15px 20px;
-    /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-    text-decoration: none;
-    color: #FFFFFF;
-    transition: 0.3s;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-nav a:hover {
-    background-color: #E50914;
-    box-shadow: 2px 6px red;
-    /* Sombra do botão ao passar o mouse */
-}
-
-/* Estilo do submenu */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000;
-    /* Garante que o submenu fique acima de outros elementos */
-    width: 180px;
-    border-radius: 20px;
-}
-
-nav ul ul li {
-    width: 100%;
-}
-
-nav ul ul a {
-    padding: 12px 15px;
-}
-
-nav li:hover>ul {
-    display: block;
-
-    nav li:focus-within>ul {
-        /* Permite que o submenu seja acessível via teclado */
-        display: block;
-    }
-}
-
-nav img {
-    width: 50px;
-    height: auto;
-
-}
 
 .overlay {
     position: absolute;
@@ -516,84 +436,64 @@ nav img {
     transform: scale(1.05);
 }
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 3rem;
-  }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
+@media screen and (max-width: 1020px) {
+
+    /* Menu mobile */
+    .menu-mobile{
+        height: 100vh;
+
 }
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
-    align-items: center;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-#nutricao {
-height: auto;
-padding: 40px 0;
+    /* Header responsivo */
+    header {
+        padding: 20px 10%;
     }
-.nutri-cards h3 {
-    font-size: 200%;
 
-}
+    header h1 {
+        font-size: 4rem;
+    }
 
+    /* Nutrição responsivo */
+    #nutricao {
+        padding: 100px 10%;
+        min-height: 200vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
-}
+    .nutri-cards {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nutri-card {
+        width: 85%;
+        height: auto;
+    }
+
+    /* Nutricionistas responsivo */
+    #nutricionistas {
+        padding: 100px 10%;
+        min-height: 200vh;
+    }
+
+    #nutricionistas h2 {
+        font-size: 2rem;
+    }
+    .nutri-container {
+        padding: 10px 4%;
+    }
+
+    .nutri-consultation {
+    width: 100%;
+      
+    }
+    .nutri-consultation img {
+        width: 100%;
+        height: auto;
+    }
+
+ 
 }

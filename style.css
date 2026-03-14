@@ -1,220 +1,419 @@
-body { /* Estilos globais, do corpo todo do site */
- font-family: 'Roboto', sans-serif;
- background-color: #0D0D0D;
-color: #FFFFFF;  
-margin: 0; 
+body {
+  /* Estilos globais, do corpo todo do site */
+  font-family: 'Roboto', sans-serif;
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  margin: 0;
 }
 
-.cabecario {   /* Estilos do cabeçário */
-height: 100vh; /* Altura do cabeçalho */
-background: url(imagens/ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
-display:flex ; /* Usando flexbox para alinhar os itens no centro */
-flex-direction: column; /* Itens em coluna */
-justify-content: center;    /* Centraliza verticalmente */
-align-items: center; /* Centraliza horizontalmente */
-text-align: center ; /* Centraliza o texto */
+.cabecario {
+  /* Estilos do cabeçário */
+  height: 100vh;
+  /* Altura do cabeçalho */
+  background: url(imagens/ChatGPT\ Image\ 15\ de\ ago.\ de\ 2025\,\ 14_11_03.png) center/cover no-repeat;
+  /* Imagem de fundo do cabeçalho */
+  display: flex;
+  /* Usando flexbox para alinhar os itens no centro */
+  flex-direction: column;
+  /* Itens em coluna */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
-.cabecario h1 { /* Estilos do título principal no cabeçário */
-    font-size: 4rem;
-    font-family: 'Bebas Neue', sans-serif;
-      color: #FFFFFF;
-      margin: 0;
-
-}
-
-.cabecario h2 { /* Estilos do subtítulo no cabeçário */
- margin: 10px 0 20px 0;
-font-size: 2rem;
- color: #E50914;
-   
-}
-
-.cabecario p { /* Estilos do parágrafo no cabeçário */
-   color: #B3B3B3;
-font-size: 1.5rem;
-margin: 20px 10px ;
-}
-
-.botao { /* Estilos do botão no cabeçário */
-background-color: #E50914; /* Cor de fundo do botão */
-text-decoration: none;  /* Remove o sublinhado do link */
-color: #FFFFFF; /* Cor do texto do botão */
-padding: 15px 40px; /* Espaçamento interno do botão */
-border: none;   /* Remove a borda padrão do botão */    
-font-weight: bold;  /* Deixa o texto em negrito */
-border-radius: 5px; /* Bordas arredondadas */
-cursor: pointer; /* Muda o cursor ao passar por cima */
-font-size: 1.2rem;  /* Tamanho da fonte */
-transition: 0.3s; /* Transição suave para o efeito hover */
-}
-.botao:hover { /* Efeito ao passar o mouse sobre o botão */
-background-color:#B20810 ; /* Muda a cor de fundo ao passar o mouse */
-
+.cabecario h1 {
+  /* Estilos do título principal no cabeçário */
+  font-size: 4rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #FFFFFF;
+  margin: 0;
 
 }
 
-.cabecario img { /* Estilos da imagem no cabeçário */
-width: 150px;
-height: auto;
+.cabecario h2 {
+  /* Estilos do subtítulo no cabeçário */
+  margin: 10px 0 20px 0;
+  font-size: 2rem;
+  color: #E50914;
+
+}
+
+.cabecario p {
+  /* Estilos do parágrafo no cabeçário */
+  color: #B3B3B3;
+  font-size: 1.5rem;
+  margin: 20px 10px;
+}
+
+.botao {
+  /* Estilos do botão no cabeçário */
+  background-color: #E50914;
+  /* Cor de fundo do botão */
+  text-decoration: none;
+  /* Remove o sublinhado do link */
+  color: #FFFFFF;
+  /* Cor do texto do botão */
+  padding: 15px 40px;
+  /* Espaçamento interno do botão */
+  border: none;
+  /* Remove a borda padrão do botão */
+  font-weight: bold;
+  /* Deixa o texto em negrito */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  cursor: pointer;
+  /* Muda o cursor ao passar por cima */
+  font-size: 1.2rem;
+  /* Tamanho da fonte */
+  transition: 0.3s;
+  /* Transição suave para o efeito hover */
+}
+
+.botao:hover {
+  /* Efeito ao passar o mouse sobre o botão */
+  background-color: #B20810;
+  /* Muda a cor de fundo ao passar o mouse */
 
 
 }
 
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+.cabecario img {
+  /* Estilos da imagem no cabeçário */
+  width: 150px;
+  height: auto;
+
+
+}
+
+.mobile {
+  display: none;
+}
+
+.mobile img {
+  display: none;
+}
+
+nav ul {
+  background-color: #1a1a1a;
+  text-decoration: none;
+  list-style: none;
+  /* Remove os marcadores da lista */
+  margin: 0;
+  /* Remove a margem padrão */
+  padding: 0;
+  /* Remove o padding padrão */
+  display: flex;
+  align-items: flex-start;
+  /* Alinha os itens no início */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do submenu */
 }
 
 nav li {
-position: relative; 
+  position: relative;
 }
 
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
+nav>ul>li {
+  margin: 0;
 }
 
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
+.menu-mobile ul {
+  /* Estilos do menu de navegação */
+  text-decoration: none;
+  list-style: none;
+  /* Remove os marcadores da lista */
+  margin: 0;
+  /* Remove a margem padrão */
+  padding: 0;
+  /* Remove o padding padrão */
+  display: flex;
+  align-items: center;
+  /* Alinha os itens no centro */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do submenu */
+}
+
+.menu-mobile li {
+  position: relative;
+}
+
+.menu-mobile>ul>li {
+  /* Estilos dos itens principais do menu */
+  margin: 0;
+}
+
+nav a {
+  /* Estilos dos links do menu */
+  display: block;
+  /* Faz o link ocupar todo o espaço do item da lista */
+  padding: 15px 20px;
+  /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+  background-color: #E50914;
+  box-shadow: 2px 6px red;
+  /* Sombra do botão ao passar o mouse */
 }
+
 /* Estilo do submenu */
 nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  flex-direction: column;
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
+  width: 180px;
+  border-radius: 20px;
 }
 
 nav ul ul li {
-width: 100%;
+  width: 100%;
 }
 
-nav ul ul a {
-padding: 12px 15px;
+
+
+nav li:hover>ul {
+  display: block;
 }
 
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
-    display: block;
-}
+nav li:focus-within>ul {
+  /* Permite que o submenu seja acessível via teclado */
+  display: block;
 }
 
 nav img {
-width:50px;
-height: auto;
+  width: 50px;
+  height: auto;
 
 }
 
-.quem_somos {  /* Estilos da seção quem somos */
-background-color:#2E2E2E;
-padding: 80px 20px;
-text-align: center;
+.btn-abrir-menu img {
+  width: 40px;
+  height: auto;
+}
+
+.menu-mobile {
+  background-color: #1a1a1a;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  overflow: hidden;
+  width: 0%;
+  transition: 0.3s ease-in-out;
+}
+
+.menu-mobile.abrir {
+  width: 70%;
+}
+
+.menu-mobile.abrir~.overlay-menu {
+  display: block;
+}
+
+.menu-mobile nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Faz os itens ocuparem toda a largura do menu */
+  list-style: none;
+}
+
+.menu-mobile nav ul li {
+  width: 100%;
+}
+
+.menu-mobile nav ul li a {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 5%;
+  display: block;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  text-align: right;
+  /* Alinha o texto à direita */
+}
+
+.menu-mobile nav ul li a:hover,
+.menu-mobile nav ul li.ativo>a,
+.menu-mobile nav ul li:has(> ul.aberto)>a {
+  background-color: #E50914;
+  color: #1a1a1a;
+  border-radius: 0;
+  box-shadow: none !important;
+  filter: none;
+  outline: none;
+  border: none;
+}
+
+.menu-mobile nav ul ul {
+  display: none;
+  background-color: #0D0D0D;
+  flex-direction: column;
+  position: static;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.menu-mobile nav ul ul.aberto {
+  display: flex;
+}
+
+.menu-mobile nav ul ul li a {
+  font-size: 18px;
+  padding: 15px 5%;
+  padding-left: 10%;
+}
+
+.menu-mobile .btn-fechar {
+  padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar img {
+  width: 25px;
+  height: auto;
+}
+
+.overlay-menu {
+  background-color: #00000077;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8888;
+  display: none;
+}
+
+.btn-abrir-menu {
+  display: none;
+}
+
+/* Quem somos */
+
+.quem_somos {
+  /* Estilos da seção quem somos */
+  background-color: #2E2E2E;
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .quem_somos h2 {
-font-size: 2rem;
-color:#E50914;
+  font-size: 2rem;
+  color: #E50914;
 }
 
 .quem_somos p {
-font-size: 1.2rem;
-margin: 0;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.Servicos h2 { /* Estilos do título da seção serviços */
-    text-align: center;
-    font-size: 2rem;
-    color: #E50914;
+.Servicos h2 {
+  /* Estilos do título da seção serviços */
+  text-align: center;
+  font-size: 2rem;
+  color: #E50914;
 
 }
+
 /* Cards de serviços */
 .cards {
-display: grid;  /* Usando grid layout, que separa os cards em linhas e colunas */
- grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
-gap: 15px; /* Espaçamento entre os cards */
-margin-top: 40px; /* Espaçamento acima dos cards */
-justify-items: center; /* Centraliza os cards horizontalmente*/
-text-align: center;
-font-size: large;
-margin: 30px 10px; /* Espaçamento ao redor dos cards , "30px" é margem em cima e embaixo, "10px" é margem nas laterais */
-  }
+  display: grid;
+  /* Usando grid layout, que separa os cards em linhas e colunas */
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 colunas de tamanho igual */
+  gap: 15px;
+  /* Espaçamento entre os cards */
+  margin-top: 40px;
+  /* Espaçamento acima dos cards */
+  justify-items: center;
+  /* Centraliza os cards horizontalmente*/
+  text-align: center;
+  font-size: large;
+  margin: 30px 10px;
+  /* Espaçamento ao redor dos cards , "30px" é margem em cima e embaixo, "10px" é margem nas laterais */
+}
 
 .card {
-background-color: #2E2E2E;
-border-radius: 20px;
-transition: 0.3s; /* Transição suave para o efeito hover */
-padding: 30px 35px; /* Espaçamento interno do card */
-width: 250px; /* Largura fixa para os cards */
+  background-color: #2E2E2E;
+  border-radius: 20px;
+  transition: 0.3s;
+  /* Transição suave para o efeito hover */
+  padding: 30px 35px;
+  /* Espaçamento interno do card */
+  width: 250px;
+  /* Largura fixa para os cards */
 }
 
 .card:hover {
-transform: translateY(-7px); /* Move o card para cima ao passar o mouse */
-background-color: #E50914;
-
-
-}
-.card a { 
-text-decoration: none;
-color: #FFFFFF;
-font-size: 1.3em;
-
-}
-
-footer  { /* Estilos do rodapé */
-background: linear-gradient(#E50914, #6e0000);
-align-items: center;
-text-align: center;
-padding: 50px 20px;
-font-size: 1.5em;
-}
- 
-footer a { /* Estilos do link no rodapé */
-background-color: #0D0D0D;
-color: #FFFFFF;
-padding: 15px 40px;
-border-radius: 5px;
-text-decoration: none;
- margin-top: 20px; 
- transition: 0.3s;
- font-weight: bold;
-}
-
-footer a:hover { /* Efeito ao passar o mouse sobre o link no rodapé */
-background-color: #FFFFFF;
-color: #0D0D0D;
+  transform: translateY(-7px);
+  /* Move o card para cima ao passar o mouse */
+  background-color: #E50914;
 
 
 }
 
-footer p { /* Estilos do parágrafo no rodapé */
-font-size: 2em;
-margin-bottom: 70px;
-font-weight: bold;
+.card a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1.3em;
+
+}
+
+footer {
+  /* Estilos do rodapé */
+  background: linear-gradient(#E50914, #6e0000);
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 1.5em;
+}
+
+footer a {
+  /* Estilos do link no rodapé */
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  padding: 15px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+footer a:hover {
+  /* Efeito ao passar o mouse sobre o link no rodapé */
+  background-color: #FFFFFF;
+  color: #0D0D0D;
+
+
+}
+
+footer p {
+  /* Estilos do parágrafo no rodapé */
+  font-size: 2em;
+  margin-bottom: 70px;
+  font-weight: bold;
 }
 
 /* ======== AJUSTES RESPONSIVOS ======== */
@@ -228,82 +427,98 @@ img {
   height: auto;
 }
 
+@media screen and (max-width: 1020px) {
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 3rem;
+  /*menu mobile */
+  .btn-abrir-menu {
+    display: block;
+    cursor: pointer;
   }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
-}
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
+  .menu-desktop {
+    display: none;
+  }
+
+  .btn-abrir-menu {
+    display: block;
+    width: 60px;
+  }
+
+  header {
+    height: 12vh;
+    justify-content: space-between;
+  }
+
+  header nav.menu-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+
+  .mobile img {
+    display: block;
+    width: 80px;
+    height: auto;
+  }
+
+  .mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 12vh;
+    padding: 0 20px;
+    margin: 10px 0;
+  }
+
+  .menu-mobile nav ul {
+    flex-direction: column;
+    align-items: right;
+    list-style: none;
+  }
+
+  .menu-mobile nav ul li a {
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+
+  .cabecario {
+    padding: 80px 5%;
+  }
+
+  .cabecario p {
+    font-size: 20px;
+  }
+
+  .botao {
+    margin-top: 20px;
+  }
+
+  /* Serviços */
+  .Servicos .cards {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  nav a {
-    font-size: 1.2rem;
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
   }
 
+  .Servicos {
+    padding: 60px 5%;
+  }
 
+  /* Rodapé */
+  footer {
+    padding: 40px 5%;
+  }
 
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
+  footer h2 {
+    font-size: 1.1em;
+    text-align: justify;
   }
 }
-
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
-}
-

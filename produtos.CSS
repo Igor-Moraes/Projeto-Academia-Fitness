@@ -17,15 +17,10 @@
         flex-direction: column;
         padding: 24px 0;
     }
+}
 
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    header h2 {
-        font-size: 1.1rem;
-        padding: 0 8px;
-    }
+* {
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -95,88 +90,7 @@ header p {
     /* Fundo semi-transparente para melhor leitura */
 }
 
-nav ul {
-    /* Estilos do menu de navegação */
-    background-color: #1a1a1a;
-    text-decoration: none;
-    list-style: none;
-    /* Remove os marcadores da lista */
-    margin: 0;
-    /* Remove a margem padrão */
-    padding: 0;
-    /* Remove o padding padrão */
-    display: flex;
-    align-items: flex-start;
-    /* Alinha os itens no início */
-    position: relative;
-    /* Necessário para o posicionamento absoluto do submenu */
-}
 
-nav li {
-    position: relative;
-}
-
-nav>ul>li {
-    /* Estilos dos itens principais do menu */
-    margin: 0;
-}
-
-nav a {
-    /* Estilos dos links do menu */
-    display: block;
-    /* Faz o link ocupar todo o espaço do item da lista */
-    padding: 15px 20px;
-    /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-    text-decoration: none;
-    color: #FFFFFF;
-    transition: 0.3s;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-nav a:hover {
-    background-color: #E50914;
-    box-shadow: 2px 6px red;
-    /* Sombra do botão ao passar o mouse */
-}
-
-/* Estilo do submenu */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000;
-    /* Garante que o submenu fique acima de outros elementos */
-    width: 180px;
-    border-radius: 20px;
-}
-
-nav ul ul li {
-    width: 100%;
-}
-
-nav ul ul a {
-    padding: 12px 15px;
-}
-
-nav li:hover>ul {
-    display: block;
-
-    nav li:focus-within>ul {
-        /* Permite que o submenu seja acessível via teclado */
-        display: block;
-    }
-}
-
-nav img {
-    width: 50px;
-    height: auto;
-
-}
 
 .produtos {
     display: flex;
@@ -184,9 +98,11 @@ nav img {
     align-items: flex-start;
     gap: 40px;
     margin-top: 40px;
-    flex-wrap: wrap; /* empilha em telas pequenas */
+    flex-wrap: wrap;
+    /* empilha em telas pequenas */
 
 }
+
 /* Container principal do carrossel - Onde controlamos o tamanho */
 .carrossel {
     position: relative;
@@ -250,7 +166,7 @@ nav img {
 }
 
 .overlay h2 {
-    border: 0; 
+    border: 0;
     margin: -10px auto 0 auto;
     font-size: 1.4vw;
     color: #E50914;
@@ -266,6 +182,7 @@ nav img {
     text-align: center;
 
 }
+
 .click-here {
     font-size: 1.3rem;
     text-decoration: underline;
@@ -323,8 +240,8 @@ section h3 {
 }
 
 .divWhey {
-flex: 1 1 400px;
-max-width: 750px;
+    flex: 1 1 400px;
+    max-width: 750px;
 }
 
 .divCrea {
@@ -333,15 +250,15 @@ max-width: 750px;
 }
 
 #whey {
-background-color: #1a1a1a;
-width: 100%;
-border: 2px solid #858585;
-border-collapse: collapse;
-box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
+    background-color: #1a1a1a;
+    width: 100%;
+    border: 2px solid #858585;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
 }
 
 #whey tr th {
-   background: linear-gradient(90deg, #E50914, #c00909);
+    background: linear-gradient(90deg, #E50914, #c00909);
     padding: 15px 20px 15px 10px;
     color: #000000;
     border-bottom: 2px solid #858585;
@@ -350,30 +267,31 @@ box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
 }
 
 #whey tr td {
-color: #e0dddd;
-padding: 15px 20px;
-border: 2px solid #858585;
+    color: #e0dddd;
+    padding: 15px 20px;
+    border: 2px solid #858585;
 }
 
 #whey tr:nth-child(even) {
-  background-color: #222;
+    background-color: #222;
 }
 
 #whey tr:hover {
-  background-color: rgba(229, 9, 20, 0.1);
-  transition: background 0.3s ease;
+    background-color: rgba(229, 9, 20, 0.1);
+    transition: background 0.3s ease;
 }
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 900px) {
-  .produtos-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .produtos-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .carrossel, .tabela-precos {
-    max-width: 90%;
-  }
+    .carrossel,
+    .tabela-precos {
+        max-width: 90%;
+    }
 }
 
 .carrossel_2 {
@@ -436,7 +354,7 @@ border: 2px solid #858585;
     justify-content: center;
 }
 
-.prev2{
+.prev2 {
     left: 0;
     /* Coloca a seta na borda esquerda */
 }
@@ -447,15 +365,15 @@ border: 2px solid #858585;
 }
 
 .creatina {
- background-color: #1a1a1a;
-width: 100%;
-border: 2px solid #858585;
-border-collapse: collapse;
-box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);   
-}   
+    background-color: #1a1a1a;
+    width: 100%;
+    border: 2px solid #858585;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
+}
 
 .creatina tr th {
-   background: linear-gradient(90deg, #E50914, #c00909);
+    background: linear-gradient(90deg, #E50914, #c00909);
     padding: 15px 20px 15px 10px;
     color: #000000;
     border-bottom: 2px solid #858585;
@@ -464,36 +382,36 @@ box-shadow: 0 0 20px rgba(229, 9, 20, 0.25);
 }
 
 .creatina tr td {
-color: #e0dddd;
-padding: 15px 20px;
-border: 2px solid #858585;
+    color: #e0dddd;
+    padding: 15px 20px;
+    border: 2px solid #858585;
 }
 
 .creatina tr:nth-child(even) {
-  background-color: #222;
+    background-color: #222;
 }
 
 .creatina tr:hover {
-  background-color: rgba(229, 9, 20, 0.1);
-  transition: background 0.3s ease;
+    background-color: rgba(229, 9, 20, 0.1);
+    transition: background 0.3s ease;
 }
 
 .crea {
-    caption-side: top; 
-    color:#fff; 
+    caption-side: top;
+    color: #fff;
     display: flex;
     flex-direction: row;
 }
 
 .exp {
-background: linear-gradient( #E50914, #6e0000);
-padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 30vh;
-margin: 30px 0 0 0;
+    background: linear-gradient(#E50914, #6e0000);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    margin: 30px 0 0 0;
 }
 
 .exp h2 {
@@ -502,6 +420,7 @@ margin: 30px 0 0 0;
     color: #fff;
     font-family: 'Bebas Neue', sans-serif;
 }
+
 .btn-exp {
     background-color: #444040;
     color: #ffffff;
@@ -520,87 +439,88 @@ margin: 30px 0 0 0;
     transform: scale(1.05);
 }
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 3rem;
-  }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
-
-header {
-    background: url('imagens/wheyFundo2.png') no-repeat center/cover;
-}
-}
-
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
-    align-items: center;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
 
 
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
-  }
-}
+@media screen and (max-width: 1020px) {
 
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
-  table {
-    font-size: 0.9rem;
-  }
+    /*menu mobile */
+    .menu-mobile nav ul {
+        flex-direction: column;
+        align-items: right;
+        list-style: none;
+        height: 100vh;
+        font-size:30px ;
+        font-weight: 300;
+    }
+    .menu-mobile nav ul li a {
+        font-size: 40px;
+        text-decoration: none;
+        text-align: right;
+        
+        
+    }
+
+    .menu-mobile nav ul li  {
+        text-align: right;
+        font-size: 30px;
+      
+    }
+
+    /*Header responsivo */
+    header {
+        padding: 40px 7%;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Produtos */
+
+    .produtos {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 2%;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+
+    }
+
+    .carrossel,
+    .carrossel_2 {
+        max-width:80vw ;
+        width: 500px;
+        height: auto;
+    }
+
+
+    .divWhey,
+    .divCrea {
+        display: none;
+    }
+
+    .tabela-precos {
+        width: 100%;
+    }
+
+    .overlay h2 {
+        font-size: 7vw;
+    }
+
+    .overlay p {
+        font-size: 4vw;
+    }
+
 
 }

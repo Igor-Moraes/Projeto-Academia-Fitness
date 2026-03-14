@@ -41,74 +41,7 @@ font-size: 1.5rem;
 margin: 20px 0 ;
 }
 
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
-}
 
-nav li {
-position: relative; 
-}
-
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
-}
-
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
-}
-
-nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
-}
-/* Estilo do submenu */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
-}
-
-nav ul ul li {
-width: 100%;
-}
-
-nav ul ul a {
-padding: 12px 15px;
-}
-
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
-    display: block;
-}
-}
-
-nav img {
-width:50px;
-height: auto;
-
-}
 .container {
     max-width: 960px;
     margin: 40px auto;
@@ -202,110 +135,62 @@ height: auto;
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .team-member {
-        flex-basis: calc(50% - 20px);
-    }
-}
+@media screen and (max-width: 1020px){
 
-@media (max-width: 480px) {
-    .team-member {
-        flex-basis: 100%;
-    }
-}
-section p{
-    color: whitesmoke;
-}
-section h3{
-    color: black;
-}
-section li{
-    color: whitesmoke;
-}
-
-
-    article video{
-   text-align: center;
-   margin-left: 110px;
-   height: auto;
-    }
-
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
+  /*menu mobile */
+  .mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 12vh;
+    padding: 0 20px;
+    margin: 10px 0;
+  }
+  .btn-abrir-menu {
+    display: block;
+  }
+  /* Header responsivo */
+  header {
+    height: auto;
+    padding: 60px 4%;
+  }
   header h1 {
     font-size: 3rem;
   }
   header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
     font-size: 1.5rem;
-    padding: 12px 15px;
   }
-}
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
+  /*Section responsivo */
+
+  section {
+    padding: 40px 8%;
+  }
+  .container {
+    margin: 5px;
+    padding: 10px 8%;
+  }
+
+  .team-members {
+    flex-direction: column;
     align-items: center;
+
   }
-  nav a {
-    font-size: 1.2rem;
+  .team-member {
+    flex-basis: 100%;
+    max-width: 400px;
+    width: 80%;
   }
 
+  /* Feedback */
+  .container {
+    margin: 20px 10px;
+    padding: 20px;
+  }
 
-
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
+  .container video {
+    width: 100%;
+    height: auto;
   }
 }
-
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
-}
-
              

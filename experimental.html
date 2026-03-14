@@ -12,15 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="experimental.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="app.js" defer></script>
     <script src="experimental.js"></script>
     <title>Aula experimental</title>
 </head>
 
 <body>
-    <nav>
+    <!--Menu interativo-->
+    <nav class="menu-desktop">
         <ul>
-            <li><img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo">
-            </li> <!--Logo da empresa no menu-->
+            <li><img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo"></li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
             <li> <a href="index.html">Início</a> </li>
             <li>
@@ -43,6 +45,52 @@
             <li> <a href="faq.html">FAQ</a></li>
         </ul>
     </nav>
+
+            <div class="mobile">
+                <img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo" id="logo-mobile"> <!--Logo da empresa no menu-->
+                
+                           <div class="btn-abrir-menu" id="btn-menu">
+                    <img src="imagens/list.svg" alt="Icone de lista"> <!--btn-menu-->
+                </div>
+            </div>
+
+     <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <img src="imagens/x-lg.svg" alt="Fechar menu">
+
+                </div> <!--btn-fechar-->
+
+                <nav>
+        <ul>
+            <!--Links do menu-->
+            <li> <a href="index.html">Início</a> </li>
+            <li>
+                <a href="#Serviços">Serviços</a>
+                <ul>
+                    <li> <a href="produtos.html">Produtos</a> </li>
+                    <li> <a href="musc.html">Musculação</a> </li>
+                    <li> <a href="cross.html">Cross fit</a> </li>
+                    <li> <a href="yoga.html">Yoga</a> </li>
+                    <li><a href="nutrição.html">Nutrição</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="contato.html">Contatos</a>
+            </li>
+            <li>
+                <a href="experimental.html">Aula experimental</a>
+            </li>
+            <li> <a href="sobre.html">Sobre</a></li>
+            <li> <a href="faq.html">FAQ</a></li>
+        </ul>
+                </nav>
+
+            </div> <!--menu-mobile-->
+
+            <div class="overlay-menu" >
+
+            </div>
+    <!--Menu interativo-->
     <header>
         <img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo">
         <h1>Aula Experimental</h1>

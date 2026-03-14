@@ -1,121 +1,150 @@
-
-body { /* Estilos globais, do corpo todo do site */
- font-family: 'Roboto', sans-serif;
- background-color: #0D0D0D;
-color: #FFFFFF;  
-margin: 0; 
+body {
+  /* Estilos globais, do corpo todo do site */
+  font-family: 'Roboto', sans-serif;
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  margin: 0;
 }
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+
+nav ul {
+  /* Estilos do menu de navegação */
+  background-color: #1a1a1a;
+  text-decoration: none;
+  list-style: none;
+  /* Remove os marcadores da lista */
+  margin: 0;
+  /* Remove a margem padrão */
+  padding: 0;
+  /* Remove o padding padrão */
+  display: flex;
+  align-items: flex-start;
+  /* Alinha os itens no início */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do submenu */
 }
 
 nav li {
-position: relative; 
+  position: relative;
 }
 
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
+nav>ul>li {
+  /* Estilos dos itens principais do menu */
+  margin: 0;
 }
 
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
+nav a {
+  /* Estilos dos links do menu */
+  display: block;
+  /* Faz o link ocupar todo o espaço do item da lista */
+  padding: 15px 20px;
+  /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+  background-color: #E50914;
+  box-shadow: 2px 6px red;
+  /* Sombra do botão ao passar o mouse */
 }
+
 /* Estilo do submenu */
 nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  min-width: 180px;
+  flex-direction: column;
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
+  width: 180px;
+  border-radius: 20px;
 }
 
 nav ul ul li {
-width: 100%;
+  width: 100%;
 }
 
 nav ul ul a {
-padding: 12px 15px;
+  padding: 12px 15px;
 }
 
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
-    display: block;
+nav li:hover>ul {
+  display: block;
 }
+
+nav li:focus-within>ul {
+  /* Permite que o submenu seja acessível via teclado */
+  display: block;
 }
 
 nav img {
-width:50px;
-height: auto;
+  width: 50px;
+  height: auto;
 
 }
 
-header {   /* Estilos do cabeçário */
-height: 100vh; /* Altura do cabeçalho */
-background: url(imagens/crossfit.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
-display:flex ; /* Usando flexbox para alinhar os itens no centro */
-flex-direction: column; /* Itens em coluna */
-justify-content: center;    /* Centraliza verticalmente */
-align-items: center; /* Centraliza horizontalmente */
-text-align: center ; /* Centraliza o texto */
+header {
+  /* Estilos do cabeçário */
+  height: 100vh;
+  /* Altura do cabeçalho */
+  background: url(imagens/crossfit.png) center/cover no-repeat;
+  /* Imagem de fundo do cabeçalho */
+  display: flex;
+  /* Usando flexbox para alinhar os itens no centro */
+  flex-direction: column;
+  /* Itens em coluna */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
-header h1 { /* Estilos do título principal no cabeçário */
-    font-size: 6rem;
-    font-family: 'Bebas Neue', sans-serif;
-      color: #FFD600;
-      margin: 0;
+header h1 {
+  /* Estilos do título principal no cabeçário */
+  font-size: 6rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #FFD600;
+  margin: 0;
 
 }
 
-header p { /* Estilos do parágrafo no cabeçário */
-   color: #ffe14a;
-font-size: 2.2rem;
-margin: 20px 0 ;
-transition: 0.3s ease;
+header p {
+  /* Estilos do parágrafo no cabeçário */
+  color: #ffe14a;
+  font-size: 2.2rem;
+  margin: 20px 0;
+  transition: 0.3s ease;
 }
 
 header p:hover {
-    transform: translateY(-5px);
-    background-color: rgba(0, 0, 0, 0.5); /* fundo preto semi-transparente */
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* fundo preto semi-transparente */
   padding: 15px;
-  border-radius: 10px; /* bordas arredondadas */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* borda branca transparente */
-  display: inline-block; /* borda ajusta só ao tamanho do texto */
+  border-radius: 10px;
+  /* bordas arredondadas */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  /* borda branca transparente */
+  display: inline-block;
+  /* borda ajusta só ao tamanho do texto */
 
 }
 
 .crossfit {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    text-align: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .crossfit h2 {
@@ -129,167 +158,114 @@ header p:hover {
 
 .crossfit p {
   margin-top: 50px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #CCCCCC;
-    border-left: 3px solid #FFD600;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #CCCCCC;
+  border-left: 3px solid #FFD600;
 }
 
 .cross-exp {
-background: linear-gradient( #FFD600, #FFA500 );
-padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 30vh;
-margin: 30px 0 0 0;
+  background: linear-gradient(#FFD600, #FFA500);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin: 30px 0 0 0;
 }
 
 .cross-exp h2 {
-    font-size: 2rem;
-    margin: 0 0 10px 0;
-    color: #000000;
-    font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #000000;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .cross-exp p {
   color: #0D0D0D;
 }
+
 .cross_exp {
-    background-color: #444040;
-    color: #ebebeb;
-    padding: 10px 40px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
-    margin: 10px;
+  background-color: #444040;
+  color: #ebebeb;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
+  margin: 10px;
 }
 
 .cross_exp:hover {
-    background-color: #000000;
-    color: #FFD600;
-    transform: scale(1.05);
+  background-color: #000000;
+  color: #FFD600;
+  transform: scale(1.05);
 }
 
 .benefícios {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 600px;
-     list-style: none;
-     letter-spacing: 1px;
+  text-align: left;
+  margin: 20px auto;
+  max-width: 600px;
+  list-style: none;
+  letter-spacing: 1px;
 }
 
 .benefícios li {
-    background-color: #333333;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border-left: 5px solid #FFD600;
+  background-color: #333333;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 5px solid #FFD600;
 }
 
 #benefícios-p {
-    margin-top: 30px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #CCCCCC;
-    text-align: left;
-    margin-left: 20px;
-    border: none;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #CCCCCC;
+  text-align: left;
+  margin-left: 20px;
+  border: none;
 }
 
 .crossfit img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-    border: 2px solid #FFD600;
-    border-bottom: 5px solid #FFD600;
-    transition: transform 0.3s, box-shadow 0.3s;  
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 2px solid #FFD600;
+  border-bottom: 5px solid #FFD600;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .crossfit img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px #FFD600;
-    transition: transform 0.3s, box-shadow 0.3s;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #FFD600;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
+
+@media screen and (max-width: 1020px) {
+  /*menu mobile */
+  .menu-mobile ul li {
+   text-align: right;
+  }
+
+  /*  Cabeçario */
+  header {
+  padding: 20px 10%;
+
+  }
+
   header h1 {
     font-size: 3rem;
   }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
-}
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
-    align-items: center;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-
-
-
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
   header p {
-    font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
-  }
+    font-size: 1.5rem;  
+
 }
 
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
 }

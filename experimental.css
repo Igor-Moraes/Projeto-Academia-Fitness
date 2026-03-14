@@ -1,318 +1,303 @@
 /* Layout lado a lado */
 .form-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .caixa-resultado {
-    min-width: 320px;
-    max-width: 400px;
-    background: #232323;
-    color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px #0008;
-    padding: 32px 24px;
-    margin-top: 0;
-    font-size: 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  min-width: 320px;
+  max-width: 400px;
+  background: #232323;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0008;
+  padding: 32px 24px;
+  margin-top: 0;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .caixa-resultado #fechar {
-    align-self: flex-end;
-    cursor: pointer;
-    color: #E50914;
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 8px;
+  align-self: flex-end;
+  cursor: pointer;
+  color: #E50914;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
 }
-body { /* Estilos globais, do corpo todo do site */
- font-family: 'Roboto', sans-serif;
- background-color: #0D0D0D;
-color: #FFFFFF;  
-margin: 0; 
+
+body {
+  /* Estilos globais, do corpo todo do site */
+  font-family: 'Roboto', sans-serif;
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  margin: 0;
 }
-    header {   /* Estilos do cabeçário */
-height: 98vh; /* Altura do cabeçalho */
-background: url(imagens/Gemini_Generated_Image_9gccah9gccah9gcc.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
-display:flex ; /* Usando flexbox para alinhar os itens no centro */
-flex-direction: column; /* Itens em coluna */
-justify-content: center;    /* Centraliza verticalmente */
-align-items: center; /* Centraliza horizontalmente */
-text-align: center ; /* Centraliza o texto */
+
+header {
+  /* Estilos do cabeçário */
+  height: 98vh;
+  /* Altura do cabeçalho */
+  background: url(imagens/Gemini_Generated_Image_9gccah9gccah9gcc.png) center/cover no-repeat;
+  /* Imagem de fundo do cabeçalho */
+  display: flex;
+  /* Usando flexbox para alinhar os itens no centro */
+  flex-direction: column;
+  /* Itens em coluna */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
 header h1 {
-    color:#E50914 ;
-    font-size: 6rem;
-    margin: 0;
-    margin-top: 90px
+  color: #E50914;
+  font-size: 6rem;
+  margin: 0;
+  margin-top: 90px
 }
 
 
-header h2 { /* Estilos do subtítulo no cabeçário */
-font-size: 2rem;
- color: #FFFFFF;
-   
+header h2 {
+  /* Estilos do subtítulo no cabeçário */
+  font-size: 2rem;
+  color: #FFFFFF;
+
 }
 
-header p { /* Estilos do parágrafo no cabeçário */
-   color: #B3B3B3;
-font-size: 1.5rem;
+header p {
+  /* Estilos do parágrafo no cabeçário */
+  color: #B3B3B3;
+  font-size: 1.5rem;
 
 }
 
 header img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 50vh;
-    position: absolute;
+  width: 150px;
+  height: auto;
+  margin-bottom: 50vh;
+  position: absolute;
 }
 
 
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+nav ul {
+  /* Estilos do menu de navegação */
+  background-color: #1a1a1a;
+  text-decoration: none;
+  list-style: none;
+  /* Remove os marcadores da lista */
+  margin: 0;
+  /* Remove a margem padrão */
+  padding: 0;
+  /* Remove o padding padrão */
+  display: flex;
+  align-items: flex-start;
+  /* Alinha os itens no início */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do submenu */
 }
 
 nav li {
-position: relative; 
+  position: relative;
 }
 
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
+nav>ul>li {
+  /* Estilos dos itens principais do menu */
+  margin: 0;
 }
 
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
+nav a {
+  /* Estilos dos links do menu */
+  display: block;
+  /* Faz o link ocupar todo o espaço do item da lista */
+  padding: 15px 20px;
+  /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+  background-color: #E50914;
+  box-shadow: 2px 6px red;
+  /* Sombra do botão ao passar o mouse */
 }
+
 /* Estilo do submenu */
 nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  min-width: 180px;
+  flex-direction: column;
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
+  width: 180px;
+  border-radius: 20px;
 }
 
 nav ul ul li {
-width: 100%;
+  width: 100%;
 }
 
 nav ul ul a {
-padding: 12px 15px;
+  padding: 12px 15px;
 }
 
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
-    display: block;
+nav li:hover>ul {
+  display: block;
 }
+
+nav li:focus-within>ul {
+  /* Permite que o submenu seja acessível via teclado */
+  display: block;
 }
 
 nav img {
-width:50px;
-height: auto;
+  width: 50px;
+  height: auto;
 
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    max-width: 400px;
-    margin: 0 auto;
-    background: #181818;
-    padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 2px 16px #0008;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #181818;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0008;
 }
 
 form h2 {
-color: #B3B3B3;
-font-size: 3rem;
+  color: #B3B3B3;
+  font-size: 3rem;
 }
 
 main {
-    padding: 20px;
-    background: #121212;
-    min-height: 100vh;
+  padding: 20px;
+  background: #121212;
+  min-height: 100vh;
 }
 
-form  {
-width: 200vh;
+form {
+  width: 200vh;
 
 
 }
+
 form label {
-    color: #E50914;
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-    align-self: flex-start;
+  color: #E50914;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  align-self: flex-start;
 }
 
 form input,
 form select {
-    font-size: 1rem;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    border: 1px solid #333;
-    background: #222;
-    color: #fff;
-    box-sizing: border-box;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  box-sizing: border-box;
 }
 
 form button {
-    width: 100%;
-    padding: 12px;
-    background: #E50914;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: background 0.2s;
+  width: 100%;
+  padding: 12px;
+  background: #E50914;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
 }
+
 form button:hover {
-    background: #b0060f;
+  background: #b0060f;
 }
 
 
 .exp-footer {
-    background: linear-gradient(#E50914, #6e0000);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 30vh;
-    margin: 30px 0 0 0;
+  background: linear-gradient(#E50914, #6e0000);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  margin: 30px 0 0 0;
 }
 
 .exp-footer h2 {
-    font-size: 2rem;
-    margin: 0 0 10px 0;
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .exp_footer {
-    background-color: #444040;
-    color: #ffffff;
-    padding: 10px 40px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
-    margin: 10px;
+  background-color: #444040;
+  color: #ffffff;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s ease, transform 0.3s;
+  margin: 10px;
 }
 
 .exp_footer:hover {
-    background-color: #000000;
-    color: #c40808;
-    transform: scale(1.05);
+  background-color: #000000;
+  color: #c40808;
+  transform: scale(1.05);
 }
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1020px) {
+  /* Estilos para telas menores que 1020px */
   header h1 {
     font-size: 3rem;
   }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
-}
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
-    align-items: center;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
-}
-  header h1 {
-    font-size: 2.5rem;
-  }
   header h2 {
     font-size: 1.5rem;
   }
+
   header p {
     font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
-  }
-}
+   }
 
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
+   header img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 50vh;
+    position: absolute;
+   }
 
-}
+   /* footer responsivo */
+    .exp-footer {
+      height: auto;
+      padding: 20px 10px;
+    }
+  }

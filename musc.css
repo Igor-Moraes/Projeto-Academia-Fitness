@@ -1,269 +1,281 @@
-body { /* Estilos globais, do corpo todo do site */
- font-family: 'Roboto', sans-serif;
- background-color: #0D0D0D;
-color: #FFFFFF;  
-margin: 0; 
+body {
+  /* Estilos globais, do corpo todo do site */
+  font-family: 'Roboto', sans-serif;
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  margin: 0;
 }
 
-nav ul { /* Estilos do menu de navegação */
-background-color: #1a1a1a;
-text-decoration: none;
-list-style: none; /* Remove os marcadores da lista */
-margin: 0; /* Remove a margem padrão */
-padding: 0; /* Remove o padding padrão */
-display: flex;
-align-items: flex-start; /* Alinha os itens no início */
-position: relative; /* Necessário para o posicionamento absoluto do submenu */  
+nav ul {
+  /* Estilos do menu de navegação */
+  background-color: #1a1a1a;
+  text-decoration: none;
+  list-style: none;
+  /* Remove os marcadores da lista */
+  margin: 0;
+  /* Remove a margem padrão */
+  padding: 0;
+  /* Remove o padding padrão */
+  display: flex;
+  align-items: flex-start;
+  /* Alinha os itens no início */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do submenu */
 }
 
 nav li {
-position: relative; 
+  position: relative;
 }
 
-nav > ul > li { /* Estilos dos itens principais do menu */
-margin: 0 ;
+nav>ul>li {
+  /* Estilos dos itens principais do menu */
+  margin: 0;
 }
 
-nav a {   /* Estilos dos links do menu */
-display: block; /* Faz o link ocupar todo o espaço do item da lista */
-padding: 15px 20px; /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
-text-decoration: none;
-color: #FFFFFF;
-transition: 0.3s;
-border-radius: 20px;
-cursor: pointer;
+nav a {
+  /* Estilos dos links do menu */
+  display: block;
+  /* Faz o link ocupar todo o espaço do item da lista */
+  padding: 15px 20px;
+  /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 nav a:hover {
-background-color: #E50914;
-box-shadow: 2px 6px red; /* Sombra do botão ao passar o mouse */
+  background-color: #E50914;
+  box-shadow: 2px 6px red;
+  /* Sombra do botão ao passar o mouse */
 }
+
 /* Estilo do submenu */
 nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 180px;
-    flex-direction: column;
-    z-index: 1000; /* Garante que o submenu fique acima de outros elementos */
-    width: 180px; 
-    border-radius: 20px; 
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  min-width: 180px;
+  flex-direction: column;
+  z-index: 1000;
+  /* Garante que o submenu fique acima de outros elementos */
+  width: 180px;
+  border-radius: 20px;
 }
 
 nav ul ul li {
-width: 100%;
+  width: 100%;
 }
 
 nav ul ul a {
-padding: 12px 15px;
+  padding: 12px 15px;
 }
 
-nav li:hover > ul  {
-display: block;
-
-nav li:focus-within > ul { /* Permite que o submenu seja acessível via teclado */
-    display: block;
+nav li:hover>ul {
+  display: block;
 }
+
+nav li:focus-within>ul {
+  /* Permite que o submenu seja acessível via teclado */
+  display: block;
 }
 
 nav img {
-width:50px;
-height: auto;
+  width: 50px;
+  height: auto;
 
 }
 
-header {   /* Estilos do cabeçário */
-height: 120vh; /* Altura do cabeçalho */
-background: url(imagens/musc.png) center/cover no-repeat; /* Imagem de fundo do cabeçalho */
-display:flex ; /* Usando flexbox para alinhar os itens no centro */
-flex-direction: column; /* Itens em coluna */
-justify-content: center;    /* Centraliza verticalmente */
-align-items: center; /* Centraliza horizontalmente */
-text-align: center ; /* Centraliza o texto */
+header {
+  /* Estilos do cabeçário */
+  height: 120vh;
+  /* Altura do cabeçalho */
+  background: url(imagens/musc.png) center/cover no-repeat;
+  /* Imagem de fundo do cabeçalho */
+  display: flex;
+  /* Usando flexbox para alinhar os itens no centro */
+  flex-direction: column;
+  /* Itens em coluna */
+  justify-content: center;
+  /* Centraliza verticalmente */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
-header h1 { /* Estilos do título principal no cabeçário */
-    font-size: 5rem;
-    font-family: 'Bebas Neue', sans-serif;
-      color: #FFFFFF;
-      margin: 0;
+header h1 {
+  /* Estilos do título principal no cabeçário */
+  font-size: 5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #FFFFFF;
+  margin: 0;
 
 }
 
-header p { /* Estilos do parágrafo no cabeçário */
-   color: #B3B3B3;
-font-size: 2rem;
-margin: 20px 0 ;
+header p {
+  /* Estilos do parágrafo no cabeçário */
+  color: #B3B3B3;
+  font-size: 2rem;
+  margin: 20px 0;
 }
+
 .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #2e2d2d;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2e2d2d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
 
-        h1 {
-            color: #ff0202;
-        }
-        h2 {
-            color: #df0202;
-            margin-top: 30px;
-        }
+h1 {
+  color: #ff0202;
+}
 
-        .call-to-action {
-            margin: 30px 0;
-            text-align: center;
-        }
+h2 {
+  color: #df0202;
+  margin-top: 30px;
+}
 
-        .btn:hover {
-            background-color: #353535;
-        }
+.call-to-action {
+  margin: 30px 0;
+  text-align: center;
+}
 
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 40px;
-            
+.btn:hover {
+  background-color: #353535;
+}
 
-        }
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
 
-        .feature-item {
-            width: 30%;
-            margin: 10px;
-        }
 
-        .feature-item h3 {
-            color: #6d0505;
-        }
+}
 
-        .selfie {
-            width: 200px;
-            height: auto;
-            margin-top: -2px;
-        }
-       .gif {
-            width: 130px;
-            height: auto;
-            
-        }
+.feature-item {
+  width: 30%;
+  margin: 10px;
+}
+
+.feature-item h3 {
+  color: #6d0505;
+}
+
+.selfie {
+  width: 200px;
+  height: auto;
+  margin-top: -2px;
+}
+
+.gif {
+  width: 130px;
+  height: auto;
+
+}
+
 article {
-    background-color: #c20101;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: auto;
+  background-color: #c20101;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: auto;
 }
 
 article h2 {
-    color: #000000;
+  color: #000000;
 }
 
 
 .call {
-    text-align: center;
-    margin-top: auto;
-    padding: 30px;
-    height: auto;
-    background-color: #972b04;
-    color: #fff;
+  text-align: center;
+  margin-top: auto;
+  padding: 30px;
+  height: auto;
+  background-color: #972b04;
+  color: #fff;
 }
 
 .call h2 {
-    color: black;
+  color: black;
 }
+
 .btn {
-    display: inline-block;
-    background-color: #fff;
-    color: #111111;
-    padding: 12px 25px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  background-color: #fff;
+  color: #111111;
+  padding: 12px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 video {
-    margin-left: 6vh;
+  margin-left: 6vh;
 }
 
-/* Em telas até 1024px (tablets) */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 3rem;
+@media screen and (max-width: 1020px) {
+  /*menu mobile */
+  .menu-mobile ul li {
+   text-align: right;
   }
-  header h2 {
-    font-size: 1.8rem;
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas de cards */
-  }
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 15px;
-  }
+
+  /*  Cabeçario */ 
+header  {
+padding: 30px 8%;
 }
 
-/* Em telas até 768px (celulares em paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Menu empilhado */
-    align-items: center;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-
-
-  nav ul ul {
-    position: static; /* Submenu posicionado estaticamente */
-    text-align: left;
-    align-items: left;
-    justify-content: left;
-  }
-nav li {
-  text-align: left;
+header h1 {
+  font-size: 3rem;
 }
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header h2 {
-    font-size: 1.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-  }
-  .cards {
-    grid-template-columns: 1fr; /* 1 coluna de card */
-  }
+header p {
+  font-size: 1.5rem;
+
 }
 
-/* Em telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  header {
-    padding: 100px 15px;
-    height: 90%;
-  }
-  header h1 {
-    font-size: 1.8rem;
-  }
-  header h2 {
-    font-size: 1.2rem;
-  }
-  .botao {
-    padding: 12px 25px;
-    font-size: 1rem;
-    margin: 0 0 55px 0;
-  }
-  header p {
-    font-size: 1rem;
-  }
-  header img {
-    margin: 15vh 0 0 0;
-    width : 50%; 
-  }
+/* Section responsivo */
+section {
+  padding: 40px 8%;
+}
+
+.container {
+  margin: auto 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.features {
+  flex-direction: column; 
+  align-items: center;
+
+}
+
+.feature-item {
+  width: 80%;
+  margin: 20px 0;
+
+}
+
+.feature-item img {
+  align-items: center;
+}
+
+.feature-item h3 , p {
+  font-size: 1.2rem;
+}
+
+video {
+  margin: 20px 0;
+  width: 100%;
+
+}
+
 }

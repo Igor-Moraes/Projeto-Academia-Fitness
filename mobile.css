@@ -1,0 +1,281 @@
+/*menu mobile e desktop*/
+
+.mobile img {
+    display: none;
+}
+
+nav ul {
+    background-color: #1a1a1a;
+    text-decoration: none;
+    list-style: none;
+    /* Remove os marcadores da lista */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o padding padrão */
+    display: flex;
+    align-items: flex-start;
+    /* Alinha os itens no início */
+    position: relative;
+    /* Necessário para o posicionamento absoluto do submenu */
+}
+
+nav li {
+    position: relative;
+}
+
+nav>ul>li {
+    margin: 0;
+}
+
+.menu-mobile ul {
+    /* Estilos do menu de navegação */
+    text-decoration: none;
+    list-style: none;
+    /* Remove os marcadores da lista */
+    margin: 0;
+    /* Remove a margem padrão */
+    padding: 0;
+    /* Remove o padding padrão */
+    display: flex;
+    align-items: center;
+    /* Alinha os itens no centro */
+    position: relative;
+    /* Necessário para o posicionamento absoluto do submenu */
+}
+
+.menu-mobile li {
+    position: relative;
+}
+
+.menu-mobile>ul>li {
+    /* Estilos dos itens principais do menu */
+    margin: 0;
+}
+
+nav a {
+    /* Estilos dos links do menu */
+    display: block;
+    /* Faz o link ocupar todo o espaço do item da lista */
+    padding: 15px 20px;
+    /* Espaçamento interno dos links, os "15px" preenchem acima e abaixo, e o "20px" preenche nas laterais */
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: 0.3s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.menu-desktop a:hover {
+    background-color: #E50914;
+    box-shadow: 2px 6px red;
+    /* Sombra do botão ao passar o mouse */
+}
+
+/* Estilo do submenu */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    flex-direction: column;
+    z-index: 1000;
+    /* Garante que o submenu fique acima de outros elementos */
+    width: 180px;
+    border-radius: 20px;
+}
+
+nav ul ul li {
+    width: 100%;
+}
+
+
+
+nav li:hover>ul {
+    display: block;
+}
+
+nav li:focus-within>ul {
+    /* Permite que o submenu seja acessível via teclado */
+    display: block;
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+
+}
+
+.btn-abrir-menu img {
+    width: 40px;
+    height: auto;
+}
+
+.menu-mobile {
+    background-color: #1a1a1a;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    overflow: hidden;
+    width: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-mobile.abrir {
+    width: 70%;
+}
+
+.menu-mobile.abrir~.overlay-menu {
+    display: block;
+}
+
+.menu-mobile nav {
+    height: 100%;
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    height: 100%;
+}
+
+.menu-mobile nav ul li {
+    width: 100%;
+    list-style: none;
+    text-align: right;
+}
+
+.menu-mobile nav ul li a {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 5%;
+    display: block;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.menu-mobile nav ul li a:hover,
+.menu-mobile nav ul li.ativo>a {
+    background-color: #E50914;
+    color: #1a1a1a;
+    border-radius: 0;
+    box-shadow: none !important;
+    filter: none;
+    outline: none;
+    border: none;
+}
+
+.menu-mobile nav ul ul {
+    display: none;
+    background-color: #0D0D0D;
+    flex-direction: column;
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.menu-mobile nav ul ul.aberto {
+    display: flex;
+}
+
+.menu-mobile nav ul ul li a {
+    font-size: 18px;
+    padding: 15px 5%;
+    padding-left: 10%;
+}
+
+.menu-mobile .btn-fechar {
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar img {
+    width: 25px;
+    height: auto;
+
+}
+
+.overlay-menu {
+    background-color: #00000077;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+}
+
+.btn-abrir-menu {
+    display: none;
+
+}
+
+@media screen and (max-width: 1020px) {
+
+    /*menu mobile */
+    header nav.menu-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+    }
+
+    .mobile img {
+        display: block;
+        width: 80px;
+        height: auto;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 12vh;
+        padding: 0 20px;
+        margin: 10px 0;
+    }
+
+    .menu-mobile nav ul {
+        flex-direction: column;
+        align-items: right;
+        list-style: none;
+    }
+
+    .menu-mobile nav ul li a {
+        font-size: 18px;
+        text-decoration: none;
+        text-align: right;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+        width: 60px;
+    }
+
+    .btn-abrir-menu img {
+        width: 60px;
+        height: auto;
+    }
+}
