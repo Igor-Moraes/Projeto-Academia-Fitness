@@ -106,17 +106,20 @@ header img {
 .form-group input {
   margin-bottom: 20px;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 5px;
   font-size: large;
   box-sizing: border-box;
   background: #333;
   color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  
 }
 
 .form-group textarea {
   /* Estilos do textarea, da "Mensagem"*/
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 5px;
   font-size: large;
   margin-bottom: 20px;
   resize: vertical;
@@ -125,6 +128,9 @@ header img {
   /* Altura mínima do textarea */
   background-color: #333;
   color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  
 }
 
 button {

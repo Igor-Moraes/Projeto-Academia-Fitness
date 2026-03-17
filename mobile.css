@@ -219,7 +219,52 @@ nav img {
 
 .btn-abrir-menu {
     display: none;
+}
 
+#btn-entrar {
+    display: block;
+    background-color: #E50914;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#btn-entrar:hover {
+  background-color: #B20810;
+  transform: translateY(-2px);
+}
+
+#btn-mobile {
+    display: block;
+    background-color: #E50914;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+    margin-left: auto;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    
+}
+
+#btn-mobile:hover {
+  background-color: #B20810;
+  transform: translateY(2px);
+}
+
+.btn-fechar {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 1020px) {

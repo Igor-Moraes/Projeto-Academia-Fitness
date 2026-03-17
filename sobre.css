@@ -135,6 +135,12 @@ margin: 20px 0 ;
     color: #fff;
 }
 
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 @media screen and (max-width: 1020px){
 
   /*menu mobile */
