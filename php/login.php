@@ -1,23 +1,23 @@
-<!DOCTYPE html> <!--O navegador entende como HTML5-->
-<html lang="pt-br"> <!--Linguagem da Página-->
-<head> <!--Cabeçário-->
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css"> <!--Conecta o HTML ao CSS -->
+    <link href="../mobile.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="../app.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js" defer ></script>
-    <title> Complexo Maromba</title>
+    <title>Entrar</title>
 </head>
 <body>
-    <!--Menu interativo-->
-    <nav class="menu-desktop">
+
+<nav class="menu-desktop">
         <ul>
             <li><img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo"></li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
@@ -30,6 +30,7 @@
                     <li> <a href="cross.html">Cross fit</a> </li>
                     <li> <a href="yoga.html">Yoga</a> </li>
                     <li><a href="nutrição.html">Nutrição</a></li>
+                    <li><a href="login.php">Login</a></li>
                 </ul>
             </li>
             <li>
@@ -40,23 +41,22 @@
             </li>
             <li> <a href="sobre.html">Sobre</a></li>
             <li> <a href="faq.html">FAQ</a></li>
-            <a href="php/login.php" id="btn-entrar">Entrar</a>
+            <a href="#" id="btn-entrar">Entrar</a>
         </ul>
-        
+
     </nav>
 
             <div class="mobile">
                 <img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo" id="logo-mobile"> <!--Logo da empresa no menu-->
-                
+
                            <div class="btn-abrir-menu" id="btn-menu">
                     <img src="imagens/list.svg" alt="Icone de lista"> <!--btn-menu-->
                 </div>
             </div>
-
-     <div class="menu-mobile" id="menu-mobile">
+            <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <img src="imagens/x-lg.svg" alt="Fechar menu">
-                    <a href="php/login.php " id="btn-mobile">Entrar</a>
+                    <a href="login.php" id="btn-mobile">Entrar</a>
 
                 </div> <!--btn-fechar-->
 
@@ -91,49 +91,17 @@
 
             </div>
     <!--Menu interativo-->
-    <header class="cabecario" id="cabecario"> <!--Cabeçário-->
-        <img src="imagens/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo ">
-        <h1>Complexo Maromba</h1>
-        <h2>A Disciplina que Transforma</h2>
-        <p>Venha para a nossa academia e encontrará um resultado de verdade, com profissionalismo e muita resenha!, nossa academia é completa e inovadora oferecendo além da Musculação diversos outros serviços, como Yoga e Crossfit</p>
-        <a class="botao" href="transition.html">Comece agora</a>
+    
+    <form class="login-container" action="processa_login.php" method="POST">
+        <h1>Entrar</h1>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="email" required placeholder="Digite seu email ou nome de usuário :"><br><br>
 
-    </header>
-    <section class="quem_somos"> <!--Seção quem somos-->
-        <h2>Quem nós somos</h2>
-        <p>Nossa academia é muito bem estruturada e aconchegante para todos, Nossa filosofia é disciplina, energia e resultados verdadeiros, e claro, não pode faltar uma boa resenha e amizade entre todos, para um clima mais leve na hora dos exercícios. Com Treinos personalizados e acompanhamento de ótimos profissionais.</p>
-    </section>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="senha" required placeholder="Digite sua senha :"><br><br>
 
-    <section class="Servicos"> <!--Seção serviços, onde fica os serviços oferecidos com seus cards-->
-        <h2> Serviços </h2>
-        <div class="cards"> <!--Cards dos serviços oferecidos-->
-            <div class="card"> <a href="produtos.html"> Produtos</a> </div> <!--Cada card é um serviço oferecido-->
-            <div class="card"> <a href="musc.html"> Musculação</a> </div>
-            <div class="card"> <a href="cross.html"> Crossfit</a> </div>
-            <div class="card"> <a href="yoga.html"> Yoga</a> </div>
-            <div class="card"> <a href="nutrição.html"> Nutrição</a> </div>
-        </div>
-    </section>
-
-    <footer class="rodape"> <!--Rodapé da página-->
-        <p>Agende sua aula experimental hoje mesmo</p>
-        <a href="experimental.html">Agendar Agora</a>
-        <p style="font-size: 20px; margin: 10vh 0 0 0;">&copy; 2026 COMPLEXO MAROMBA . Todos os direitos reservados.</p>
-        
-
-    </footer>
-
-
-
-
-
-
-
-
-
-
-
-
+        <button type="submit">Entrar</button>
+    </form>
 
 </body>
 </html>
