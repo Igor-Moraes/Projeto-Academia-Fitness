@@ -1,7 +1,15 @@
 body { 
-    background-color: #000000;
-    margin:0; 
+    margin: 0; 
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+        url("../images/login-foto.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /*AREA LOGIN*/
@@ -17,6 +25,8 @@ body {
     flex-direction: column;
     align-items: center;
     animation: opacityAnimation 2s ease-in-out;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 @keyframes opacityAnimation {
@@ -28,13 +38,12 @@ body {
     margin-bottom: 20px;
     display: block;
     display: flex;
-    color : #E50914;
-    text-shadow:
-    0 0 10px #ff0000,
-    0 0 0px #ff0000,
-    0 0 30px #ff3333,
-    0 0 0px #ff6666;
+    color : #f8f8f8;
+    text-shadow: #E50914 0px 0px 10px,
+     #E50914 0px 0px 20px,
+      #E50914 0px 0px 30px;
 }
+
 
 .login-container label {
     align-self: flex-start;
@@ -114,3 +123,26 @@ body {
     margin-left: 10px;
 }
 
+.forgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Hover */
+.forgot-password:hover {
+    color: #E50914;
+    text-decoration: underline;
+}
+
+.login-container input:focus {
+    border-color: #E50914;
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+    outline: none;
+}
+
+.txt{
+    color: #E50914;
+}

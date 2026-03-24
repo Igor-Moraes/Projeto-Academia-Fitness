@@ -93,14 +93,23 @@
     
     <form class="login-container" action="processa_login.php" method="POST">
         <h1>Entrar</h1>
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="email" required placeholder="Digite seu email ou nome de usuário :"><br><br>
+        <label for="username" class="txt">Usuário:</label>
+        <input type="text" id="username" name="email" required placeholder="Digite seu email :"><br><br>
 
-        <label for="password">Senha:</label>
+        <label for="password" class="txt">Senha:</label>
         <input type="password" id="password" name="senha" required placeholder="Digite sua senha :"><br><br>
 
         <button type="submit">Entrar</button>
+
+<a href="recuperar_senha.php" class="forgot-password">
+    Esqueci minha senha
+</a>
+
+
     </form>
 
 </body>
+
+
+
 </html>

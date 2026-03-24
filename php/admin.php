@@ -33,7 +33,7 @@ require 'security.php';
         <ul>
             <li><img src="images/rodrigo.jpg" alt="Foto do Usuário " id="usuario"></li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
-			<li><h2>Bem vindo! Rodrigo Pereira Silva</h2></li>
+			<li><h2>Rodigo Pereira Silva</h2></li>
             <a href="logout.php" id="btn-entrar" style="margin-top: 18px; font-family: 'Roboto', sans-serif; font-size: 18px;">Sair</a>
         </ul>
 
