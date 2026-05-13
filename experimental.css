@@ -75,7 +75,7 @@ header h2 {
 header p {
   /* Estilos do parágrafo no cabeçário */
   color: #B3B3B3;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 
 }
 
@@ -235,6 +235,13 @@ form button {
 
 form button:hover {
   background: #b0060f;
+}
+
+.titulo-endereco{
+    color: #E50914;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 22px;
 }
 
 

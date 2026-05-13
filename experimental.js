@@ -1,7 +1,7 @@
+// FUNÇÃO PARA O FORMULÁRIO DE CADASTRO 
 function cadastroForm(event) {
     event.preventDefault();
     var nome = document.getElementById('nome').value;
-    var sobrenome = document.getElementById('sobrenome').value;
     var email = document.getElementById('email').value;
     var telefone = document.getElementById('telefone').value;
     var modalidade = document.getElementById('modalidade').value;
@@ -16,7 +16,7 @@ function cadastroForm(event) {
 
     
     if (
-        nome === "" || sobrenome === "" || email === "" || telefone === "" || modalidade === "" ||
+        nome === "" || email === "" || telefone === "" || modalidade === "" ||
         cpf === "" || genero === "" || dataNascimento === "" || senha === "" || confirmarSenha === ""
     ) {
         mensagem.style.color = 'red';
@@ -32,37 +32,56 @@ function cadastroForm(event) {
         mensagem.innerHTML = "";
     }
 
-    resultado.innerHTML = `
-        <div id="fechar" onclick="fechaDivResultado()">X</div>
-        <div><strong>Nome:</strong> ${nome}</div>
-        <div><strong>Sobrenome:</strong> ${sobrenome}</div>
-        <div><strong>Email:</strong> ${email}</div>
-        <div><strong>Telefone:</strong> ${telefone}</div>
-        <div><strong>Modalidade:</strong> ${modalidade}</div>
-        <div><strong>CPF:</strong> ${cpf}</div>
-        <div><strong>Gênero:</strong> ${genero}</div>
-        <div><strong>Data de Nascimento:</strong> ${dataNascimento}</div>
-        <div><strong>Senha:</strong> ${senha}</div>
-        <div><strong>Confirmar Senha:</strong> ${confirmarSenha}</div>
-    `;
-    resultado.style.display = "flex";
-
-    // Exibir no console
-    console.log("Nome:", nome);
-    console.log("Sobrenome:", sobrenome);
-    console.log("Email:", email);
-    console.log("Telefone:", telefone);
-    console.log("Modalidade:", modalidade);
-    console.log("CPF:", cpf);
-    console.log("Gênero:", genero);
-    console.log("Foto:", foto);
-    console.log("Data de Nascimento:", dataNascimento);
-    console.log("Senha:", senha);
-    console.log("Confirmar Senha:", confirmarSenha);
 }
 
-function fechaDivResultado() {
-    var resultado = document.getElementById("resultado");
-    resultado.style.display = "none";
-    resultado.style.margin = "0 30px 0 0"
-}
+// FUNÇÕES PARA O CEP
+const cepInput = document.getElementById("cep");
+
+// Máscara do CEP
+cepInput.addEventListener("input", () => {
+
+    let valor = cepInput.value.replace(/\D/g, "");
+
+    if(valor.length > 5){
+        valor = valor.slice(0,5) + "-" + valor.slice(5,8);
+    }
+
+    cepInput.value = valor;
+});
+
+
+// Busca automática do endereço
+cepInput.addEventListener("blur", async () => {
+
+    let cep = cepInput.value.replace(/\D/g, "");
+
+    if(cep.length !== 8){
+        alert("CEP inválido!");
+        return;
+    }
+
+    try {
+
+        const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+        const dados = await resposta.json();
+
+        if(dados.erro){
+            alert("CEP não encontrado!");
+            return;
+        }
+
+        document.getElementById("rua").value = dados.logradouro;
+        document.getElementById("bairro").value = dados.bairro;
+        document.getElementById("cidade").value = dados.localidade;
+        document.getElementById("estado").value = dados.uf;
+
+        document.getElementById("numero").focus();
+
+    } catch(error){
+
+        console.log(error);
+
+        alert("Erro ao buscar CEP");
+    }
+});
