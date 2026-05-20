@@ -16,7 +16,7 @@ require 'conecta.php';
 	//if ($usuario && password_verify($senha, $usuario['senha'])) {
     if ($usuario && $senha == $usuario['senha']) {
         // Login com sucesso
-        $_SESSION['usuario_id']   = $usuario['id'];
+        $_SESSION['usuario_id']   = $usuario['usuario_id'];
         $_SESSION['usuario_nome'] = $usuario['nome'];
         
         header("Location: admin.php");

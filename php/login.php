@@ -40,7 +40,10 @@
             </li>
             <li> <a href="..\sobre.html">Sobre</a></li>
             <li> <a href="..\faq.html">FAQ</a></li>
-            <a href="login.php" id="btn-entrar">Entrar</a>
+              <div id="buttons">
+                <a href="cadastro.php" id="btn-entrar">Cadastre - se</a>
+                <a href="login.php" id="btn-entrar">Entrar</a>
+            </div>
         </ul>
 
     </nav>
@@ -55,7 +58,10 @@
             <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <img src="images/x-lg.svg" alt="Fechar menu">
-                    <a href="login.php" id="btn-mobile">Entrar</a>
+                     <div id="buttons">
+                <a href="cadastro.php" id="btn-entrar">Cadastre - se</a>
+                <a href="login.php" id="btn-entrar">Entrar</a>
+            </div>
 
                 </div> <!--btn-fechar-->
 
@@ -93,23 +99,14 @@
     
     <form class="login-container" action="processa_login.php" method="POST">
         <h1>Entrar</h1>
-        <label for="username" class="txt">Usuário:</label>
-        <input type="text" id="username" name="email" required placeholder="Digite seu email :"><br><br>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="email" required placeholder="Digite seu email ou nome de usuário :"><br><br>
 
-        <label for="password" class="txt">Senha:</label>
+        <label for="password">Senha:</label>
         <input type="password" id="password" name="senha" required placeholder="Digite sua senha :"><br><br>
 
         <button type="submit">Entrar</button>
-
-<a href="recuperar_senha.php" class="forgot-password">
-    Esqueci minha senha
-</a>
-
-
     </form>
 
 </body>
-
-
-
 </html>

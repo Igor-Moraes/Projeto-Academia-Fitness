@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'sistema_empresa';
+$db   = 'sistemas_academia';
 $port = '3306';
 $user = 'root';
 $pass = ""; 
