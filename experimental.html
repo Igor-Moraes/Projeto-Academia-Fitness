@@ -43,7 +43,11 @@
             </li>
             <li> <a href="sobre.html">Sobre</a></li>
             <li> <a href="faq.html">FAQ</a></li>
-            <a href="php/login.php" id="btn-entrar">Entrar</a>
+
+            <div id="buttons">
+                <a href="php/cadastro.php" id="btn-entrar">Cadastre - se</a>
+                <a href="php/login.php" id="btn-entrar">Entrar</a>
+            </div>
         </ul>
     </nav>
 
@@ -58,7 +62,10 @@
      <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <img src="imagens/x-lg.svg" alt="Fechar menu">
-                    <a href="php/login.php" id="btn-mobile">Entrar</a>
+                    <div id="buttons">
+                         <a href="php/cadastro.php" id="btn-entrar">Cadastre - se</a>
+                         <a href="php/login.php" id="btn-entrar">Entrar</a>
+                    </div>
 
                 </div> <!--btn-fechar-->
 
@@ -102,7 +109,7 @@
     <main>
         <div class="form-container">
             <form onsubmit="cadastroForm(event)">
-                <h2>Formulário de Cadastro</h2>
+                <h2>Marcar Aula Experimental</h2>
                 <label for="nome">Nome Completo:</label>
                 <input type="text" id="nome" name="nome" required>
                 <label for="email">Email:</label>
@@ -120,29 +127,6 @@
                 <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
                     title="Formato: 000.000.000-00" placeholder="000.000.000-00">
-
-                    <h3 class="titulo-endereco">Endereço</h3>
-
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" placeholder="00000-000">
-
-                <label for="rua">Rua:</label>
-                <input type="text" id="rua">
-
-                <label for="numero">Número:</label>
-                <input type="number" id="numero">
-
-                <label for="bairro">Bairro:</label>
-                <input type="text" id="bairro">
-
-                <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade">
-
-                <label for="estado">Estado:</label>
-                <input type="text" id="estado">
-
-                <label for="complemento">Complemento:</label>
-                <input type="text" id="complemento">
                 <label for="genero">Gênero:</label>
                 <select id="genero" name="genero" required>
                     <option value="">Selecione um gênero</option>
@@ -150,15 +134,16 @@
                     <option value="feminino">Feminino</option>
                     <option value="outro">Outro</option>
                 </select>
-                <label for="foto">Foto (Opcional):</label>
-                <input type="file" id="foto" name="foto" accept="image/*">
                 <label for="data_nascimento">Data de Nascimento:</label>
                 <input type="date" id="data_nascimento" name="data_nascimento" required>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
-                <label for="confirmar_senha">Confirmar Senha:</label>
-                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
-                <button type="submit" id="cadastro">Cadastrar</button>
+                <label for="turno">Turno:</label>
+                <select id="turno" name="turno" required>
+                    <option value="">Selecione um turno</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+                <button type="submit" id="cadastro">Marcar Aula</button>
 
             </form>
             <div id="resultado" class="caixa-resultado" style="display:none;"></div>

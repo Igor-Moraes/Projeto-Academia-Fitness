@@ -242,6 +242,15 @@ nav img {
   transform: translateY(-2px);
 }
 
+#buttons {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    left: 33vw;
+    
+}
+
 #btn-mobile {
     display: block;
     background-color: #E50914;
@@ -323,4 +332,16 @@ nav img {
         width: 60px;
         height: auto;
     }
+
+    #buttons {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    flex-direction: column;
+    position: relative;
+    left: 18vw;
+    
+}
+
+
 }
