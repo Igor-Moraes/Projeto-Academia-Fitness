@@ -31,9 +31,9 @@ require 'security.php';
 <body>
 	<nav class="menu-desktop">
         <ul>
-            <li><img src="images/rodrigo.jpg" alt="Foto do Usuário " id="usuario"></li> <!--Logo da empresa no menu-->
-            <!--Links do menu-->
-			<li><h2>Bem vindo! Rodrigo Pereira Silva</h2></li>
+         <h2>
+            👋 Bem vindo, <?php echo $_SESSION['cliente_nome']; ?>
+            </h2></li>
             <a href="logout.php" id="btn-entrar" style="margin-top: 18px; font-family: 'Roboto', sans-serif; font-size: 18px;">Sair</a>
         </ul>
 
