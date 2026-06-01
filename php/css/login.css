@@ -1,7 +1,14 @@
 body { 
-    background-color: #000000;
     margin:0; 
+    background-color: #121212;
     font-family: 'Roboto', sans-serif;
+  /* O linear-gradient cria uma película preta transparente (65%) sobre a imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+    padding: 0;
 }
 
 /*AREA LOGIN*/
@@ -112,3 +119,30 @@ body {
     margin-left: 10px;
 }
 
+
+
+/*Estilo da área dos funcionários*/
+#btn-sair {
+    display: block;
+    background-color: #E50914;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+    margin-left: auto;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 5px;
+    position: absolute;
+    left: 69.7vw;
+}
+
+#btn-sair:hover {
+  background-color: #B20810;
+  transform: translateY(2px);
+}
+
+/*Estilo da área de funcionários-clientes */

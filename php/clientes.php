@@ -1,11 +1,14 @@
-<?php 
-require 'security.php';
-?>
+<?php
 
-<!DOCTYPE html>
-<html lang="pt-br">
+require 'security.php';
+require 'conecta.php';
+
+
+?>
+<!doctype html>
+<html>
 <head>
- <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
@@ -17,10 +20,11 @@ require 'security.php';
     <script src="../app.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Administrador-Clientes</title>
+	
 </head>
-<body>
-    <nav class="menu-desktop">
+<body style="color: #a1a1a1;">
+     <nav class="menu-desktop">
         <ul>
             <li><img src="images/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo"></li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
@@ -69,5 +73,26 @@ require 'security.php';
 
             </div>
     <!--Menu interativo-->
-</body>
-</html>
+<h1>Clientes</h1>
+<?php
+$sql = "SELECT cliente.*,endereço.*
+        FROM cliente
+        JOIN endereço
+        ON cliente.id_endereço = endereço.id_endereço";
+	$stmt = $pdo->query($sql);
+	//Com loop usando while
+	
+	while ($row = $stmt->fetch()) {
+        echo "ID: " . $row['id_cliente'] . "<br>";
+        echo "Nome: " . $row['nome'] . "<br>";
+        echo "CPF: " . $row['cpf'] . "<br>";
+        echo "E-mail: " . $row['email'] . "<br>";
+		echo "Telefone: " . $row['telefone'] . "<br>";
+        echo "Endereço: " . $row['rua'] . ", " . $row['numero_casa'] . " - " . $row['bairro'] . ", " . $row['cidade'] . "-". $row['estado'] . " , " . $row['cep']. "<br>";
+		
+        echo "-----------------------<br>";
+    }
+
+
+
+?></html>   

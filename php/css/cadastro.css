@@ -41,10 +41,11 @@ body {
 
 header {
   /* Estilos do cabeçalho */
-  background-color: #000000;
+ /* O linear-gradient cria uma película preta transparente (65%) sobre a imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/fundoCadastro.png) cover/center no-repeat; 
   padding: 20px;
   text-align: center;
-  height: 40vh;
+  height: 90vh;
   border-bottom : 5px solid #E50914;
   border-radius: 10px 10px 0 0;
 
