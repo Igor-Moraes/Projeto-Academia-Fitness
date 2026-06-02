@@ -75,10 +75,10 @@ require 'conecta.php';
     <!--Menu interativo-->
 <h1>Clientes</h1>
 <?php
-$sql = "SELECT cliente.*,endereço.*
+$sql = "SELECT cliente.*,endereco.*
         FROM cliente
-        JOIN endereço
-        ON cliente.id_endereço = endereço.id_endereço";
+        JOIN endereco
+        ON cliente.id_endereco = endereco.id_endereco";
 	$stmt = $pdo->query($sql);
 	//Com loop usando while
 	

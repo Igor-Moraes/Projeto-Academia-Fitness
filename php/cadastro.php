@@ -102,11 +102,13 @@
              <p>Faça já seu cadastro na nossa academia! Receba treinos especializados de acordo com a sua preferência, acompanhamento com nutricionistas e tenha acesso a várias promoções exclusivas nos produtos que vendemos. Venha fazer parte da nossa família! </p>
 
         </header>
+        
+        
 
 
         <main>
         <div class="form-container">
-            <form onsubmit="cadastroForm(event)">
+            <form  action="cadastro_clientes.php" method="post" enctype="multipart/form-data">
                 <h2>Formulário de Cadastro</h2>
                 <label for="nome">Nome Completo:</label>
                 <input type="text" id="nome" name="nome" required>
@@ -127,27 +129,20 @@
                     title="Formato: 000.000.000-00" placeholder="000.000.000-00">
 
                     <h3 class="titulo-endereco">Endereço</h3>
-
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" placeholder="00000-000">
-
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="00000-000">
                 <label for="rua">Rua:</label>
-                <input type="text" id="rua">
-
+                <input type="text" id="rua" name="rua">
                 <label for="numero">Número:</label>
-                <input type="number" id="numero">
-
+                <input type="number" id="numero" name="numero">
                 <label for="bairro">Bairro:</label>
-                <input type="text" id="bairro">
-
+                <input type="text" id="bairro" name="bairro">
                 <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade">
-
+                <input type="text" id="cidade" name="cidade">
                 <label for="estado">Estado:</label>
-                <input type="text" id="estado">
-
+                <input type="text" id="estado" name="estado">
                 <label for="complemento">Complemento:</label>
-                <input type="text" id="complemento">
+                <input type="text" id="complemento" name="complemento">
                 <label for="genero">Gênero:</label>
                 <select id="genero" name="genero" required>
                     <option value="">Selecione um gênero</option>
@@ -175,6 +170,10 @@
         </div>
 
     </main>
+
+
+
+
     
     
  

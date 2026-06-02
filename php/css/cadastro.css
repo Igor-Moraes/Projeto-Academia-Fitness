@@ -37,14 +37,17 @@ body {
   background-color: #0c0c0c;
   color: #FFFFFF;
   margin: 0;
+  
 }
 
 header {
   /* Estilos do cabeçalho */
  /* O linear-gradient cria uma película preta transparente (65%) sobre a imagem */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/fundoCadastro.png) cover/center no-repeat; 
+ background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/fundoCadastro.png');
   padding: 20px;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
   height: 90vh;
   border-bottom : 5px solid #E50914;
   border-radius: 10px 10px 0 0;
@@ -54,8 +57,9 @@ header {
 header h1 {
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #E50914;
-    margin-top: 10vh;
+    margin-top: 40vh;
     font-size: 3rem;
 }
 
