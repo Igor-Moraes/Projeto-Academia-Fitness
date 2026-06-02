@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 02, 2026 at 02:19 AM
+-- Generation Time: Jun 02, 2026 at 06:58 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -197,7 +197,7 @@ CREATE TABLE `estoque` (
 CREATE TABLE `exercícios` (
   `id_exercicio` int NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `grupo-muscular` varchar(80) NOT NULL
+  `grupo_muscular` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -406,7 +406,8 @@ CREATE TABLE `treinos` (
   `id_cliente` int NOT NULL,
   `id_funcionario` int NOT NULL,
   `data_inicio` date NOT NULL,
-  `nome_treino` varchar(50) DEFAULT NULL
+  `nome_treino` varchar(50) DEFAULT NULL,
+  `horario` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
