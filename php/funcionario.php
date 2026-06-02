@@ -69,5 +69,39 @@ require 'security.php';
 
             </div>
     <!--Menu interativo-->
+
+     <form class="form_treinos" action="cadastro_treinos.php" method="POST" id="form_treinos">
+        <h1>Cadastro de Treinos</h1>
+        <label for="nome_treino">Nome do Treino:</label>
+        <input type="text" id="nome_treino" name="nome_treino" required placeholder="Digite o nome do treino :"><br><br>
+
+        <label for="data">Data </label>
+        <input type="date" id="data" name="data" required><br><br>
+
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario" required><br><br>
+
+        <label for="series">Séries:</label>
+        <input type="number" id="series" name="series" required><br><br>
+
+        <label for="repeticoes">Repetições:</label>
+        <input type="number" id="repeticoes" name="repeticoes"
+            required><br><br>
+    
+            <label for="carga">Carga (kg):</label>
+        <input type="number" id="carga" name="carga" required><br><br>
+
+        <label for="nome_exercicio">Nome do Exercício:</label>
+        <input type="text" id="nome_exercicio" name="nome_exercicio" required placeholder="Digite o nome do exercício :"><br><br>
+        
+        <label for="grupo_muscular" >Grupo Muscular:</label>
+        <input type="text" id="grupo_muscular" name="grupo_muscular" required placeholder="Digite o grupo muscular :"><br><br>
+        <label for="id_cliente">ID do Cliente:</label>
+        <input type="number" id="id_cliente" name="id_cliente" required><br><br>
+        <label for="id_funcionario">ID do Funcionário:</label>
+        <input type="number" id="id_funcionario" name="id_funcionario" required><br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
 </body>
 </html>
