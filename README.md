@@ -192,9 +192,11 @@ Projeto desenvolvido para fins acadêmicos.
 
 **Equipe de Desenvolvimento**
 
-* Igor Moraes
+* Igor Carvalho de Moraes
 * Ana Júlia de Paiva Valentim
-* (Adicionar demais integrantes)
+* Rodrigo Pereira Silva
+* Leandro Evangelista Fernandes
+* Marllon Marques de Oliveira
 
 ---
 
