@@ -1,11 +1,13 @@
-<?php 
+<?php
+// Garante que apenas usuários autenticados possam acessar esta página
 require 'security.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
- <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
@@ -18,59 +20,233 @@ require 'security.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
+
+    <style>
+        /* Container que contém todos os cards de treino */
+        .treinos-container {
+            display: flex;
+            /* usa flexbox para alinhar os itens em linha */
+            flex-wrap: wrap;
+            /* permite que os itens quebrem para a próxima linha */
+            gap: 20px;
+            /* espaço entre os cards */
+            justify-content: center;
+            /* centraliza os cards horizontalmente */
+        }
+
+        /* Cada .treino-container vira uma coluna que conterá um .treino-item.
+           Ele ocupa um terço da largura disponível, para mostrar 3 cards por linha */
+        .treino-container {
+            flex: 0 0 calc(33.333% - 20px);
+            box-sizing: border-box;
+            /* inclui padding/borda no cálculo de largura */
+            display: flex;
+            justify-content: center;
+            /* centraliza o card dentro da coluna */
+        }
+
+        /* O card visual */
+        .treino-item {
+            background-color: #050507;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(224, 2, 2, 0.39);
+            border: 1px solid #E50914;
+            width: 90%;
+            /* ocupa 90% da coluna para deixar pequena margem */
+            margin: 0;
+            margin-bottom: 20px;     }
+
+        .acoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-editar,
+        .btn-excluir {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-editar {
+            background: #0066ff;
+            border: none;
+
+
+        }
+
+        .btn-editar:hover {
+            background: #0052cc;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-excluir {
+            background: #E50914;
+        }
+
+        .btn-excluir:hover {
+            background: #b80000;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .btn-salvar {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #0066ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+
+            overflow-y: auto;
+            /* permite rolagem */
+        }
+
+        .modal-conteudo {
+            background: #050507;
+            border: 1px solid #E50914;
+            width: 500px;
+            max-width: 90%;
+
+            margin: 20px auto;
+
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+
+            max-height: 90vh;
+            /* limita altura */
+            overflow-y: auto;
+            /* cria scroll interno */
+        }
+
+        .modal-conteudo h2 {
+            text-align: center;
+            color: #E50914;
+        }
+
+        .modal-conteudo label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .modal-conteudo input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .modal-conteudo label {
+            margin-top: 8px;
+        }
+
+        .modal-conteudo input,
+        .modal-conteudo select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 3px;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .fechar {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+        }
+
+
+
+
+        /* Responsivo: em telas pequenas mostra 1 item, em telas médias 2 */
+        @media (max-width: 900px) {
+            .treino-container {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .treino-container {
+                flex: 0 0 90%;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <nav class="menu-desktop">
         <ul>
             <li><img src="images/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo"></li> <!--Logo da empresa no menu-->
             <!--Links do menu-->
             <li> <a href="funcionario.php"> Cadastro de Treinos
-            </a> </li>
+                </a> </li>
             <li>
-                <a href="clientes.php">Clientes</a> </li>
+                <a href="clientes.php">Clientes</a>
+            </li>
 
-              <li><a href="logout.php" id="btn-sair">Sair</a></li>
-            
+            <li><a href="logout.php" id="btn-sair">Sair</a></li>
+
         </ul>
 
     </nav>
 
-            <div class="mobile">
-                <img src="images/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo" id="logo-mobile"> <!--Logo da empresa no menu-->
+    <div class="mobile">
+        <img src="images/logo.png" alt="Logo da empresa, um desenho de bíceps com fundo vermelho em círculo" id="logo-mobile"> <!--Logo da empresa no menu-->
 
-                           <div class="btn-abrir-menu" id="btn-menu">
-                    <img src="images/list.svg" alt="Icone de lista"> <!--btn-menu-->
-                </div>
-            </div>
-            <div class="menu-mobile" id="menu-mobile">
-                <div class="btn-fechar">
-                    <img src="images/x-lg.svg" alt="Fechar menu">
-                     <div id="buttons">
+        <div class="btn-abrir-menu" id="btn-menu">
+            <img src="images/list.svg" alt="Icone de lista"> <!--btn-menu-->
+        </div>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="btn-fechar">
+            <img src="images/x-lg.svg" alt="Fechar menu">
+            <div id="buttons">
                 <a href="cadastro.php" id="btn-entrar">Cadastre - se</a>
                 <a href="login.php" id="btn-entrar">Entrar</a>
             </div>
 
-                </div> <!--btn-fechar-->
+        </div> <!--btn-fechar-->
 
-                <nav>
-        <ul>
-            <!--Links do menu-->
-            <li> <a href="funcionario.php">Cadastro Treinos</a> </li>
-            <li>
-                <a href="#Serviços">Clientes</a>
-    
-            
-        </ul>
-                </nav>
+        <nav>
+            <ul>
+                <!--Links do menu-->
+                <li> <a href="funcionario.php">Cadastro Treinos</a> </li>
+                <li>
+                    <a href="#Serviços">Clientes</a>
 
-            </div> <!--menu-mobile-->
 
-            <div class="overlay-menu" >
+            </ul>
+        </nav>
 
-            </div>
+    </div> <!--menu-mobile-->
+
+    <div class="overlay-menu">
+
+    </div>
     <!--Menu interativo-->
 
-     <form class="form_treinos" action="cadastro_treinos.php" method="POST" id="form_treinos">
+    <form class="form_treinos" action="cadastro_treinos.php" method="POST" id="form_treinos">
         <h1>Cadastro de Treinos</h1>
         <label for="nome_treino">Nome do Treino:</label>
         <input type="text" id="nome_treino" name="nome_treino" required placeholder="Digite o nome do treino :"><br><br>
@@ -87,14 +263,14 @@ require 'security.php';
         <label for="repeticoes">Repetições:</label>
         <input type="number" id="repeticoes" name="repeticoes"
             required><br><br>
-    
-            <label for="carga">Carga (kg):</label>
+
+        <label for="carga">Carga (kg):</label>
         <input type="number" id="carga" name="carga" required><br><br>
 
         <label for="nome_exercicio">Nome do Exercício:</label>
         <input type="text" id="nome_exercicio" name="nome_exercicio" required placeholder="Digite o nome do exercício :"><br><br>
-        
-        <label for="grupo_muscular" >Grupo Muscular:</label>
+
+        <label for="grupo_muscular">Grupo Muscular:</label>
         <input type="text" id="grupo_muscular" name="grupo_muscular" required placeholder="Digite o grupo muscular :"><br><br>
         <label for="id_cliente">ID do Cliente:</label>
         <input type="number" id="id_cliente" name="id_cliente" required><br><br>
@@ -103,5 +279,272 @@ require 'security.php';
 
         <button type="submit">Cadastrar</button>
     </form>
+
+    <main class="main-funcionario">
+        <h2>Treinos Cadastrados</h2>
+        <div class="treinos-container">
+            <?php
+            // Conecta ao banco usando as configurações em conecta.php
+            require "conecta.php";
+
+            // Monta a consulta SQL para buscar treinos e dados relacionados
+            $sql = "SELECT
+                treinos.id_treino,
+                treinos.nome_treino,
+                treinos.data_inicio,
+                treinos.horario,
+
+                cliente.id_cliente,
+                funcionário.id_funcionario,
+                treinos_exercícios.id_treino_exercicio,
+                exercícios.id_exercicio,
+
+                exercícios.nome,
+                exercícios.grupo_muscular,
+
+                treinos_exercícios.series,
+                treinos_exercícios.repeticoes,
+                treinos_exercícios.carga,
+
+                cliente.nome AS nome_cliente,
+                funcionário.nome AS nome_funcionario
+
+            FROM treinos
+
+            JOIN cliente
+            ON treinos.id_cliente = cliente.id_cliente
+
+            JOIN funcionário
+            ON treinos.id_funcionario = funcionário.id_funcionario
+
+            JOIN treinos_exercícios
+            ON treinos.id_treino = treinos_exercícios.id_treino
+
+            JOIN exercícios
+            ON treinos_exercícios.id_exercicio = exercícios.id_exercicio;";
+
+            // Prepara e executa a query de forma segura com PDO
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+
+            // Recupera todos os resultados em um array associativo
+            $treinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Para cada treino recuperado, renderiza um card na página
+            foreach ($treinos as $treino) {
+
+                echo "<div class='treino-container'>";
+                echo "<div class='treino-item'>";
+
+                echo "<h3>" . htmlspecialchars($treino['nome_treino']) . "</h3>";
+
+                echo "<p><strong>Data:</strong> " . htmlspecialchars($treino['data_inicio']) . "</p>";
+
+                echo "<p><strong>Horário:</strong> " . htmlspecialchars($treino['horario']) . "</p>";
+
+                echo "<p><strong>Exercício:</strong> " . htmlspecialchars($treino['nome']) . "</p>";
+
+                echo "<p><strong>Grupo Muscular:</strong> " . htmlspecialchars($treino['grupo_muscular']) . "</p>";
+
+                echo "<p><strong>Séries:</strong> " . htmlspecialchars($treino['series']) . "</p>";
+
+                echo "<p><strong>Repetições:</strong> " . htmlspecialchars($treino['repeticoes']) . "</p>";
+
+                echo "<p><strong>Carga:</strong> " . htmlspecialchars($treino['carga']) . " kg</p>";
+
+                echo "<p><strong>Cliente:</strong> " . htmlspecialchars($treino['nome_cliente']) . "</p>";
+
+                echo "<p><strong>Funcionário:</strong> " . htmlspecialchars($treino['nome_funcionario']) . "</p>";
+
+                echo "<div class='acoes'>";
+
+                echo "<button
+                    type='button'
+                    class='btn-editar'
+                    onclick='abrirModal(
+                        " . $treino['id_treino'] . ",
+                        " . $treino['id_treino_exercicio'] . ",
+                        `" . htmlspecialchars($treino['nome_treino'], ENT_QUOTES) . "`,
+                        `" . $treino['data_inicio'] . "`,
+                        `" . $treino['horario'] . "`,
+                        " . $treino['series'] . ",
+                        " . $treino['repeticoes'] . ",
+                        " . $treino['carga'] . ",
+                        " . $treino['id_cliente'] . ",
+                        " . $treino['id_funcionario'] . ",
+                        " . $treino['id_exercicio'] . "
+                    )'>
+                    Editar
+                </button>";
+
+                echo "<a
+                    href='excluir_treino.php?id=" . $treino['id_treino'] . "'
+                    class='btn-excluir'
+                    onclick=\"return confirm('Deseja excluir este treino?')\">
+                    Excluir
+                </a>";
+
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+
+    </main>
+
+    <div id="modalEditar" class="modal">
+
+        <div class="modal-conteudo">
+
+            <span class="fechar" onclick="fecharModal()">
+                &times;
+            </span>
+
+            <h2>Editar Treino</h2>
+
+            <form action="atualizar_treino.php" method="POST" id="formEdit">
+
+                <input
+                    type="hidden"
+                    id="id_treino"
+                    name="id_treino">
+
+                <input
+                    type="hidden"
+                    id="id_treino_exercicio_modal"
+                    name="id_treino_exercicio">
+
+                <label>Nome do Treino</label>
+                <input
+                    type="text"
+                    id="nome_treino_modal"
+                    name="nome_treino">
+
+                <label>Data</label>
+                <input
+                    type="date"
+                    id="data_modal"
+                    name="data_inicio">
+
+                <label>Horário</label>
+                <input
+                    type="time"
+                    id="horario_modal"
+                    name="horario">
+
+                <label>Séries</label>
+                <input
+                    type="number"
+                    id="series_modal"
+                    name="series">
+
+                <label>Repetições</label>
+                <input
+                    type="number"
+                    id="repeticoes_modal"
+                    name="repeticoes">
+
+                <label>Carga</label>
+                <input
+                    type="number"
+                    id="carga_modal"
+                    name="carga">
+
+                <label>Exercício</label>
+
+                <select id="id_exercicio_modal" name="id_exercicio">
+                    <option value="">Selecione um exercício</option>
+                    <?php
+                    // Consulta para obter os exercícios disponíveis
+                    $sqlExercicios = "SELECT id_exercicio, nome FROM exercícios";
+                    $stmtExercicios = $pdo->prepare($sqlExercicios);
+                    $stmtExercicios->execute();
+                    $exercicios = $stmtExercicios->fetchAll(PDO::FETCH_ASSOC);
+
+                    // Gera as opções do select com os exercícios
+                    foreach ($exercicios as $exercicio) {
+                        echo "<option value='" . $exercicio['id_exercicio'] . "'>" . htmlspecialchars($exercicio['nome']) . "</option>";
+                    }
+                    ?>
+                </select>
+
+                <label>Grupo Muscular</label>
+                <input type="text" id="grupo_muscular_modal" name="grupo_muscular">
+
+                <label>ID Cliente</label>
+                <input type="number" id="id_cliente_modal" name="id_cliente">
+
+                <label>ID Funcionário</label>
+                <input type="number" id="id_funcionario_modal" name="id_funcionario">
+
+                <button
+                    type="submit"
+                    class="btn-salvar">
+                    Salvar Alterações
+                </button>
+
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function abrirModal(
+            idTreino,
+            idTreinoExercicio,
+            nomeTreino,
+            dataInicio,
+            horario,
+            series,
+            repeticoes,
+            carga,
+            idCliente,
+            idFuncionario,
+            idExercicio
+        ) {
+
+            document.getElementById('modalEditar').style.display = 'block';
+
+            document.getElementById('id_treino').value = idTreino;
+            document.getElementById('id_treino_exercicio_modal').value = idTreinoExercicio;
+
+            document.getElementById('nome_treino_modal').value = nomeTreino;
+
+            document.getElementById('data_modal').value = dataInicio;
+
+            document.getElementById('horario_modal').value = horario;
+
+            document.getElementById('series_modal').value = series;
+
+            document.getElementById('repeticoes_modal').value = repeticoes;
+
+            document.getElementById('carga_modal').value = carga;
+
+            document.getElementById('id_cliente_modal').value = idCliente;
+
+            document.getElementById('id_funcionario_modal').value = idFuncionario;
+
+            document.getElementById('id_exercicio_modal').value = idExercicio;
+        }
+
+        function fecharModal() {
+            document.getElementById('modalEditar').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+
+            let modal = document.getElementById('modalEditar');
+
+            if (event.target === modal) {
+                fecharModal();
+            }
+        }
+    </script>
+
+
 </body>
+
 </html>
