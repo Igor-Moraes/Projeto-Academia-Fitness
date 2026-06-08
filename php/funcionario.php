@@ -16,182 +16,14 @@ require 'security.php';
     <link rel="icon" href="favicon.ico">
     <link href="../mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/treinos.css">
     <script src="../app.js" defer></script>
+    <script src="js/treinos.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
 
-    <style>
-        /* Container que contém todos os cards de treino */
-        .treinos-container {
-            display: flex;
-            /* usa flexbox para alinhar os itens em linha */
-            flex-wrap: wrap;
-            /* permite que os itens quebrem para a próxima linha */
-            gap: 20px;
-            /* espaço entre os cards */
-            justify-content: center;
-            /* centraliza os cards horizontalmente */
-        }
 
-        /* Cada .treino-container vira uma coluna que conterá um .treino-item.
-           Ele ocupa um terço da largura disponível, para mostrar 3 cards por linha */
-        .treino-container {
-            flex: 0 0 calc(33.333% - 20px);
-            box-sizing: border-box;
-            /* inclui padding/borda no cálculo de largura */
-            display: flex;
-            justify-content: center;
-            /* centraliza o card dentro da coluna */
-        }
-
-        /* O card visual */
-        .treino-item {
-            background-color: #050507;
-            color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(224, 2, 2, 0.39);
-            border: 1px solid #E50914;
-            width: 90%;
-            /* ocupa 90% da coluna para deixar pequena margem */
-            margin: 0;
-            margin-bottom: 20px;     }
-
-        .acoes {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn-editar,
-        .btn-excluir {
-            text-decoration: none;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .btn-editar {
-            background: #0066ff;
-            border: none;
-
-
-        }
-
-        .btn-editar:hover {
-            background: #0052cc;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-excluir {
-            background: #E50914;
-        }
-
-        .btn-excluir:hover {
-            background: #b80000;
-            transition: background-color 0.3s ease;
-        }
-
-
-        .btn-salvar {
-            margin-top: 15px;
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background: #0066ff;
-            color: white;
-            font-weight: bold;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-
-            overflow-y: auto;
-            /* permite rolagem */
-        }
-
-        .modal-conteudo {
-            background: #050507;
-            border: 1px solid #E50914;
-            width: 500px;
-            max-width: 90%;
-
-            margin: 20px auto;
-
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-
-            max-height: 90vh;
-            /* limita altura */
-            overflow-y: auto;
-            /* cria scroll interno */
-        }
-
-        .modal-conteudo h2 {
-            text-align: center;
-            color: #E50914;
-        }
-
-        .modal-conteudo label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        .modal-conteudo input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: none;
-            box-sizing: border-box;
-        }
-
-        .modal-conteudo label {
-            margin-top: 8px;
-        }
-
-        .modal-conteudo input,
-        .modal-conteudo select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 3px;
-            box-sizing: border-box;
-            border-radius: 4px;
-        }
-
-        .fechar {
-            float: right;
-            font-size: 28px;
-            cursor: pointer;
-            color: white;
-        }
-
-
-
-
-        /* Responsivo: em telas pequenas mostra 1 item, em telas médias 2 */
-        @media (max-width: 900px) {
-            .treino-container {
-                flex: 0 0 calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .treino-container {
-                flex: 0 0 90%;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -246,6 +78,20 @@ require 'security.php';
     </div>
     <!--Menu interativo-->
 
+    <?php
+    require "conecta.php";
+
+    $sqlClientes = "SELECT id_cliente, nome FROM cliente";
+    $stmtClientes = $pdo->prepare($sqlClientes);
+    $stmtClientes->execute();
+    $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
+
+    $sqlFuncionarios = "SELECT id_funcionario, nome FROM funcionário";
+    $stmtFuncionarios = $pdo->prepare($sqlFuncionarios);
+    $stmtFuncionarios->execute();
+    $funcionarios = $stmtFuncionarios->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
     <form class="form_treinos" action="cadastro_treinos.php" method="POST" id="form_treinos">
         <h1>Cadastro de Treinos</h1>
         <label for="nome_treino">Nome do Treino:</label>
@@ -272,10 +118,21 @@ require 'security.php';
 
         <label for="grupo_muscular">Grupo Muscular:</label>
         <input type="text" id="grupo_muscular" name="grupo_muscular" required placeholder="Digite o grupo muscular :"><br><br>
-        <label for="id_cliente">ID do Cliente:</label>
-        <input type="number" id="id_cliente" name="id_cliente" required><br><br>
-        <label for="id_funcionario">ID do Funcionário:</label>
-        <input type="number" id="id_funcionario" name="id_funcionario" required><br><br>
+        <label for="id_cliente">Cliente:</label>
+        <select id="id_cliente" name="id_cliente" required>
+            <option value="">Selecione o cliente</option>
+            <?php foreach ($clientes as $cliente): ?>
+                <option value="<?= htmlspecialchars($cliente['id_cliente']) ?>"><?= htmlspecialchars($cliente['id_cliente'] . ' - ' . $cliente['nome']) ?></option>
+            <?php endforeach; ?>
+        </select><br><br>
+
+        <label for="id_funcionario">Funcionário:</label>
+        <select id="id_funcionario" name="id_funcionario" required>
+            <option value="">Selecione o funcionário</option>
+            <?php foreach ($funcionarios as $funcionario): ?>
+                <option value="<?= htmlspecialchars($funcionario['id_funcionario']) ?>"><?= htmlspecialchars($funcionario['id_funcionario'] . ' - ' . $funcionario['nome']) ?></option>
+            <?php endforeach; ?>
+        </select><br><br>
 
         <button type="submit">Cadastrar</button>
     </form>
@@ -284,9 +141,6 @@ require 'security.php';
         <h2>Treinos Cadastrados</h2>
         <div class="treinos-container">
             <?php
-            // Conecta ao banco usando as configurações em conecta.php
-            require "conecta.php";
-
             // Monta a consulta SQL para buscar treinos e dados relacionados
             $sql = "SELECT
                 treinos.id_treino,
@@ -352,9 +206,21 @@ require 'security.php';
 
                 echo "<p><strong>Carga:</strong> " . htmlspecialchars($treino['carga']) . " kg</p>";
 
-                echo "<p><strong>Cliente:</strong> " . htmlspecialchars($treino['nome_cliente']) . "</p>";
+                $sqlCliente = "SELECT nome FROM cliente WHERE id_cliente = :id_cliente";
+                $stmtCliente = $pdo->prepare($sqlCliente);
+                $stmtCliente->bindParam(':id_cliente', $treino['id_cliente'], PDO::PARAM_INT);
+                $stmtCliente->execute();
+                $cliente = $stmtCliente->fetch(PDO::FETCH_ASSOC);
 
-                echo "<p><strong>Funcionário:</strong> " . htmlspecialchars($treino['nome_funcionario']) . "</p>";
+                echo "<p><strong>Cliente:</strong> " . htmlspecialchars($cliente['nome']) . "</p>";
+
+                $sqlFuncionario = "SELECT nome FROM funcionário WHERE id_funcionario = :id_funcionario";
+                $stmtFuncionario = $pdo->prepare($sqlFuncionario);
+                $stmtFuncionario->bindParam(':id_funcionario', $treino['id_funcionario'], PDO::PARAM_INT);
+                $stmtFuncionario->execute();
+                $funcionario = $stmtFuncionario->fetch(PDO::FETCH_ASSOC);
+
+                echo "<p><strong>Funcionário:</strong> " . htmlspecialchars($funcionario['nome']) . "</p>";
 
                 echo "<div class='acoes'>";
 
@@ -471,11 +337,21 @@ require 'security.php';
                 <label>Grupo Muscular</label>
                 <input type="text" id="grupo_muscular_modal" name="grupo_muscular">
 
-                <label>ID Cliente</label>
-                <input type="number" id="id_cliente_modal" name="id_cliente">
+                <label>Cliente</label>
+                <select id="id_cliente_modal" name="id_cliente">
+                    <option value="">Selecione o cliente</option>
+                    <?php foreach ($clientes as $cliente): ?>
+                        <option value="<?= htmlspecialchars($cliente['id_cliente']) ?>"><?= htmlspecialchars($cliente['id_cliente'] . ' - ' . $cliente['nome']) ?></option>
+                    <?php endforeach; ?>
+                </select>
 
-                <label>ID Funcionário</label>
-                <input type="number" id="id_funcionario_modal" name="id_funcionario">
+                <label>Funcionário</label>
+                <select id="id_funcionario_modal" name="id_funcionario">
+                    <option value="">Selecione o funcionário</option>
+                    <?php foreach ($funcionarios as $funcionario): ?>
+                        <option value="<?= htmlspecialchars($funcionario['id_funcionario']) ?>"><?= htmlspecialchars($funcionario['id_funcionario'] . ' - ' . $funcionario['nome']) ?></option>
+                    <?php endforeach; ?>
+                </select>
 
                 <button
                     type="submit"
@@ -491,58 +367,7 @@ require 'security.php';
 
     </div>
 
-    <script>
-        function abrirModal(
-            idTreino,
-            idTreinoExercicio,
-            nomeTreino,
-            dataInicio,
-            horario,
-            series,
-            repeticoes,
-            carga,
-            idCliente,
-            idFuncionario,
-            idExercicio
-        ) {
 
-            document.getElementById('modalEditar').style.display = 'block';
-
-            document.getElementById('id_treino').value = idTreino;
-            document.getElementById('id_treino_exercicio_modal').value = idTreinoExercicio;
-
-            document.getElementById('nome_treino_modal').value = nomeTreino;
-
-            document.getElementById('data_modal').value = dataInicio;
-
-            document.getElementById('horario_modal').value = horario;
-
-            document.getElementById('series_modal').value = series;
-
-            document.getElementById('repeticoes_modal').value = repeticoes;
-
-            document.getElementById('carga_modal').value = carga;
-
-            document.getElementById('id_cliente_modal').value = idCliente;
-
-            document.getElementById('id_funcionario_modal').value = idFuncionario;
-
-            document.getElementById('id_exercicio_modal').value = idExercicio;
-        }
-
-        function fecharModal() {
-            document.getElementById('modalEditar').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-
-            let modal = document.getElementById('modalEditar');
-
-            if (event.target === modal) {
-                fecharModal();
-            }
-        }
-    </script>
 
 
 </body>

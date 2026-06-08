@@ -1,0 +1,211 @@
+  /* Container que contém todos os cards de treino */
+  .treinos-container {
+      display: flex;
+      /* usa flexbox para alinhar os itens em linha */
+      flex-wrap: wrap;
+      /* permite que os itens quebrem para a próxima linha */
+      gap: 20px;
+      /* espaço entre os cards */
+      justify-content: center;
+      /* centraliza os cards horizontalmente */
+  }
+
+  /* Cada .treino-container vira uma coluna que conterá um .treino-item.
+           Ele ocupa um terço da largura disponível, para mostrar 3 cards por linha */
+  .treino-container {
+      flex: 0 0 calc(33.333% - 20px);
+      box-sizing: border-box;
+      /* inclui padding/borda no cálculo de largura */
+      display: flex;
+      justify-content: center;
+      /* centraliza o card dentro da coluna */
+  }
+
+  /* O card visual */
+  .treino-item {
+      background-color: #050507;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(224, 2, 2, 0.39);
+      border: 1px solid #E50914;
+      width: 90%;
+      /* ocupa 90% da coluna para deixar pequena margem */
+      margin: 0;
+      margin-bottom: 20px;
+  }
+
+  .acoes {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+  }
+
+  .btn-editar {
+      background: #0066ff;
+      border: none;
+
+
+  }
+
+  .btn-editar:hover {
+      background: #0052cc;
+      transition: background-color 0.3s ease;
+  }
+
+  .btn-excluir {
+      background: #E50914;
+  }
+
+  .btn-excluir:hover {
+      background: #b80000;
+      transition: background-color 0.3s ease;
+  }
+
+
+  .btn-salvar {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #0066ff;
+      color: white;
+      font-weight: bold;
+  }
+
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+
+      overflow-y: auto;
+      /* permite rolagem */
+  }
+
+  .modal::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  .modal::-webkit-scrollbar-track {
+      background: #050507;
+  }
+
+  .modal::-webkit-scrollbar-thumb {
+      background: #E50914;
+      border-radius: 10px;
+      border: 2px solid #050507;
+  }
+
+  .modal::-webkit-scrollbar-thumb:hover {
+      background: #ff2a2a;
+  }
+
+  .modal {
+      scrollbar-width: thin;
+      scrollbar-color: #E50914 #050507;
+  }
+
+  .modal-conteudo {
+      background: #050507;
+      border: 1px solid #E50914;
+      width: 500px;
+      max-width: 90%;
+
+      margin: 20px auto;
+
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+
+      max-height: 90vh;
+      /* limita altura */
+      overflow-y: auto;
+      /* cria scroll interno */
+  }
+
+  .modal-conteudo::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  .modal-conteudo::-webkit-scrollbar-track {
+      background: #050507;
+  }
+
+  .modal-conteudo::-webkit-scrollbar-thumb {
+      background: #E50914;
+      border-radius: 10px;
+      border: 2px solid #050507;
+  }
+
+  .modal-conteudo::-webkit-scrollbar-thumb:hover {
+      background: #ff2a2a;
+  }
+
+  .modal-conteudo h2 {
+      text-align: center;
+      color: #E50914;
+  }
+
+  .modal-conteudo label {
+      display: block;
+      margin-top: 10px;
+  }
+
+  .modal-conteudo input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+      box-sizing: border-box;
+  }
+
+  .modal-conteudo label {
+      margin-top: 8px;
+  }
+
+  .modal-conteudo input,
+  .modal-conteudo select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 3px;
+      box-sizing: border-box;
+      border-radius: 4px;
+  }
+
+  .fechar {
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+  }
+
+
+
+
+  /* Responsivo: em telas pequenas mostra 1 item, em telas médias 2 */
+  @media (max-width: 900px) {
+      .treino-container {
+          flex: 0 0 calc(50% - 20px);
+      }
+  }
+
+  @media (max-width: 600px) {
+      .treino-container {
+          flex: 0 0 90%;
+      }
+  }

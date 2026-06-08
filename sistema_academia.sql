@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 08, 2026 at 03:57 AM
+-- Generation Time: Jun 08, 2026 at 07:57 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -80,7 +80,7 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `cpf`, `data_nascimento`, `telefone
 (6, 'Ronaldo Nazário', '123.321.321-32', '2002-02-02', '55+ (32) 99973-8012', 'ronaldofenomeno@gmail.com', 'masculino', 'musculacao', 19, NULL),
 (7, 'Vergil ', '399.422.780-10', '1981-12-02', '55+ (32) 99942-3214', 'vergilyamato@gmail.com', 'masculino', 'crossfit', 20, NULL),
 (9, 'Leon S. Kennedy', '313.402.780-10', '1999-03-04', '55+ (32) 99923-8057', 'leonardopolicial@gmail.com', 'masculino', 'yoga', 22, NULL),
-(10, 'Harry Kane da Silva', '999.402.780-10', '1989-09-06', '55+ (32) 99973-9129', 'kanefuracao@gmail.com', 'masculino', 'nutricionista', 23, NULL);
+(10, 'Harry Kane da Silva', '999.402.780-11', '1989-09-06', '55+ (32) 99973-9129', 'kanefuracao@gmail.com', 'masculino', 'nutricionista', 23, NULL);
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,11 @@ INSERT INTO `credenciais` (`id_credencial`, `id_cliente`, `email`, `senha`, `id_
 (9, 6, 'ronaldofenomeno@gmail.com', '$2y$10$ysnoXSgpPlQeNT5ZGlB6E./wQrwMfoT4cVSw8EvQPRDQe60dDcIHi', NULL, NULL),
 (10, 7, 'vergilyamato@gmail.com', '$2y$10$fjxB2E1qzyeTtwHLebX4ieG6jPtQTzNXPUJCHkbXh7JA4NVJid972', NULL, NULL),
 (12, 9, 'leonardopolicial@gmail.com', '$2y$10$jL4II2RifDhWywd5z6QhyulGzN2J1oDSYbb7BmtrVxqTGf9.Mebqa', NULL, NULL),
-(13, 10, 'kanefuracao@gmail.com', '$2y$10$mDfhE/UWeKk5HxmDGPVZf.9gPhFJRirVlx9wE4vXHiPeFv882FEGW', NULL, NULL);
+(13, 10, 'kanefuracao@gmail.com', '$2y$10$mDfhE/UWeKk5HxmDGPVZf.9gPhFJRirVlx9wE4vXHiPeFv882FEGW', NULL, NULL),
+(14, NULL, 'willianpersonal@gmail.com\r\n', 'admin1234', 8, NULL),
+(15, NULL, 'yuricalmozen@gmail.com\r\n', 'admin1234', 9, NULL),
+(16, NULL, 'juliomonstro@gmail.com\r\n', 'admin1234', 10, NULL),
+(17, NULL, 'claricedasfontes@gmail.com\r\n', 'admin1234', 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -220,7 +224,8 @@ CREATE TABLE `exercícios` (
 INSERT INTO `exercícios` (`id_exercicio`, `nome`, `grupo_muscular`) VALUES
 (1, 'Supino Reto', 'Peito'),
 (2, 'Cachorro Olhando para Baixo (Adho Mukha Svanasana)', 'Costas e Pernas'),
-(5, 'Agachamento Livre', 'Pernas');
+(5, 'Agachamento Livre', 'Pernas'),
+(7, 'Postura da Montanha (Tadasana)', 'Corpo Inteiro');
 
 -- --------------------------------------------------------
 
@@ -443,7 +448,8 @@ CREATE TABLE `treinos` (
 INSERT INTO `treinos` (`id_treino`, `id_cliente`, `id_funcionario`, `data_inicio`, `nome_treino`, `horario`) VALUES
 (1, 6, 8, '2026-06-10', 'Treino A - Peito e Tríceps', '18:30:00'),
 (2, 1, 9, '2026-06-10', 'Yoga Flexibilidade', '17:30:00'),
-(5, 7, 10, '2026-06-10', 'CrossFit Iniciante', '13:00:00');
+(5, 7, 10, '2026-06-10', 'CrossFit Iniciante', '13:00:00'),
+(7, 9, 9, '2026-06-10', 'Yoga Básico Iniciante', '08:00:00');
 
 -- --------------------------------------------------------
 
@@ -467,7 +473,8 @@ CREATE TABLE `treinos_exercícios` (
 INSERT INTO `treinos_exercícios` (`id_treino_exercicio`, `id_treino`, `id_exercicio`, `series`, `repeticoes`, `carga`) VALUES
 (1, 1, 1, 4, 12, 29),
 (2, 2, 2, 4, 1, 0),
-(4, 5, 5, 4, 15, 30);
+(4, 5, 5, 3, 15, 30),
+(6, 7, 7, 2, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -689,7 +696,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `credenciais`
 --
 ALTER TABLE `credenciais`
-  MODIFY `id_credencial` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_credencial` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `endereco`
@@ -719,7 +726,7 @@ ALTER TABLE `estoque`
 -- AUTO_INCREMENT for table `exercícios`
 --
 ALTER TABLE `exercícios`
-  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `faturamento_mensal`
@@ -791,13 +798,13 @@ ALTER TABLE `servicos`
 -- AUTO_INCREMENT for table `treinos`
 --
 ALTER TABLE `treinos`
-  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `treinos_exercícios`
 --
 ALTER TABLE `treinos_exercícios`
-  MODIFY `id_treino_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_treino_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `venda`
