@@ -32,7 +32,6 @@ require 'security.php';
     <!--link rel="stylesheet" href="css/estilo.css" -->
 
     <style>
-
         main {
             max-width: 800px;
             margin: 0 auto;
@@ -44,8 +43,9 @@ require 'security.php';
             margin-bottom: 20px;
             font-family: 'Roboto', sans-serif;
             font-size: 28px;
-            
+
         }
+
         .treino-card {
             border: 1px solid #E50914;
             border-radius: 8px;
@@ -71,44 +71,45 @@ require 'security.php';
                 opacity: 1;
             }
 
-    }
+        }
 
-    .sem-treinos {
-        text-align: center;
-        color: #E50914;
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-     
-}
-    .sem-treinos-container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #000000;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(207, 6, 6, 0.52);
-    }
-    .btn-contato {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #E50914;
-        color: #FFFFFF;
-        text-decoration: none;
-        border-radius: 4px;
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
-        align-items: center;
-        margin-top: 20px;
-        margin-left: 250px;
-        font-size: 18px;
-        transition: background-color 0.3s ease;
-}
+        .sem-treinos {
+            text-align: center;
+            color: #E50914;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
 
-.btn-contato:hover {
-        background-color: #B20710;
-}
+        }
 
+        .sem-treinos-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(207, 6, 6, 0.52);
+        }
+
+        .btn-contato {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #E50914;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 250px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-contato:hover {
+            background-color: #B20710;
+        }
     </style>
 </header>
 
@@ -119,7 +120,8 @@ require 'security.php';
                 👋 Bem vindo, <?php echo $_SESSION['cliente_nome']; ?>
             </h2>
             </li>
-            <a href="logout.php" id="btn-entrar" style="margin-top: 18px; font-family: 'Roboto', sans-serif; font-size: 18px;">Sair</a>
+            <a href="logout.php" id="btn-entrar"
+                style="margin-top: 18px; font-family: 'Roboto', sans-serif; font-size: 18px;">Sair</a>
         </ul>
 
     </nav>
@@ -165,7 +167,6 @@ require 'security.php';
 
                 cliente.id_cliente,
                 funcionário.id_funcionario,
-                treinos_exercícios.id_treino_exercicio,
                 exercícios.id_exercicio,
 
                 exercícios.nome AS nome_exercicio,
@@ -224,7 +225,7 @@ require 'security.php';
             // Se não tiver treinos, avisa o usuário.
             echo "<div class='sem-treinos-container'>";
             echo "<p class='sem-treinos'>Você não possui nenhum treino cadastrado.</p>";
-            echo "<p class='sem-treinos'>Entre em contato com um de nossos treinadores para criar seu primeiro treino personalizado!</p>"; 
+            echo "<p class='sem-treinos'>Entre em contato com um de nossos treinadores para criar seu primeiro treino personalizado!</p>";
             echo "<p class='sem-treinos'>Estamos ansiosos para ajudar você a alcançar seus objetivos de fitness!</p>";
             echo "<a href='../contato.html' class='btn-contato'>Contato</a>";
             echo "</div>";

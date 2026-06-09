@@ -119,6 +119,63 @@ if (isset($_POST['salvar'])) {
 
 }
 
+if (isset($_GET['excluir'])) {
+
+    try {
+
+        $pdo->beginTransaction();
+
+        $id_cliente = $_GET['excluir'];
+
+        // Busca o endereço do cliente
+        $sql = "SELECT id_endereco
+                FROM cliente
+                WHERE id_cliente = :id";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['id' => $id_cliente]);
+
+        $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($cliente) {
+
+            // Exclui acessos do cliente
+            $sql = "DELETE FROM acesso
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui cliente
+            $sql = "DELETE FROM cliente
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui endereço
+            $sql = "DELETE FROM endereco
+                    WHERE id_endereco = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                'id' => $cliente['id_endereco']
+            ]);
+        }
+
+        $pdo->commit();
+
+    } catch (Exception $e) {
+
+        $pdo->rollBack();
+        die($e->getMessage());
+
+    }
+
+    header("Location: clientes.php");
+    exit;
+}
+
 ?>
 <!doctype html>
 <html>
@@ -572,7 +629,7 @@ Editar
 </a>
 
 <a class='btn-excluir'
-href='excluir_cliente.php?id=" . $row['id_cliente'] . "'
+href='clientes.php?excluir=" . $row['id_cliente'] . "'
 onclick=\"return confirm('Deseja excluir este cliente?')\">
 Excluir
 </a>
