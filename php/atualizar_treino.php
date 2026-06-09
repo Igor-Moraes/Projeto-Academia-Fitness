@@ -25,6 +25,14 @@ $repeticoes = $_POST['repeticoes'];
 
 $carga = $_POST['carga'];
 
+$id_exercicio = (int) $_POST['id_exercicio'];
+
+$grupo_muscular = $_POST['grupo_muscular'];
+
+$id_cliente = (int) $_POST['id_cliente'];
+
+$id_funcionario = (int) $_POST['id_funcionario'];
+
 /*
 Atualiza a tabela treinos
 */
@@ -47,11 +55,12 @@ $stmt->bindValue(':id_treino', $id_treino);
 $stmt->execute();
 
 /*
-Atualiza séries, repetições e carga
+Atualiza o vínculo do exercício e seus atributos
 */
 $sql = "
 UPDATE treinos_exercícios
 SET
+    id_exercicio = :id_exercicio,
     series = :series,
     repeticoes = :repeticoes,
     carga = :carga
@@ -60,10 +69,47 @@ WHERE id_treino_exercicio = :id_treino_exercicio
 
 $stmt = $pdo->prepare($sql);
 
-$stmt->bindValue(':series', $series);
-$stmt->bindValue(':repeticoes', $repeticoes);
-$stmt->bindValue(':carga', $carga);
-$stmt->bindValue(':id_treino_exercicio', $id_treino_exercicio);
+$stmt->bindValue(':id_exercicio', $id_exercicio, PDO::PARAM_INT);
+$stmt->bindValue(':series', $series, PDO::PARAM_INT);
+$stmt->bindValue(':repeticoes', $repeticoes, PDO::PARAM_INT);
+$stmt->bindValue(':carga', $carga, PDO::PARAM_INT);
+$stmt->bindValue(':id_treino_exercicio', $id_treino_exercicio, PDO::PARAM_INT);
+
+$stmt->execute();
+
+/*
+Atualiza o grupo muscular do exercício selecionado
+*/
+$sql = "
+UPDATE exercícios
+SET
+    grupo_muscular = :grupo_muscular
+WHERE id_exercicio = :id_exercicio
+";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->bindValue(':grupo_muscular', $grupo_muscular);
+$stmt->bindValue(':id_exercicio', $id_exercicio, PDO::PARAM_INT);
+
+$stmt->execute();
+
+/*
+Atualiza cliente e funcionário do treino
+*/
+$sql = "
+UPDATE treinos
+SET
+    id_cliente = :id_cliente,
+    id_funcionario = :id_funcionario
+WHERE id_treino = :id_treino
+";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->bindValue(':id_cliente', $id_cliente, PDO::PARAM_INT);
+$stmt->bindValue(':id_funcionario', $id_funcionario, PDO::PARAM_INT);
+$stmt->bindValue(':id_treino', $id_treino, PDO::PARAM_INT);
 
 $stmt->execute();
 

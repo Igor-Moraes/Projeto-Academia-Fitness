@@ -153,7 +153,7 @@ require 'security.php';
                 treinos_exercícios.id_treino_exercicio,
                 exercícios.id_exercicio,
 
-                exercícios.nome,
+                exercícios.nome AS nome_exercicio,
                 exercícios.grupo_muscular,
 
                 treinos_exercícios.series,
@@ -196,7 +196,7 @@ require 'security.php';
 
                 echo "<p><strong>Horário:</strong> " . htmlspecialchars($treino['horario']) . "</p>";
 
-                echo "<p><strong>Exercício:</strong> " . htmlspecialchars($treino['nome']) . "</p>";
+                echo "<p><strong>Exercício:</strong> " . htmlspecialchars($treino['nome_exercicio']) . "</p>";
 
                 echo "<p><strong>Grupo Muscular:</strong> " . htmlspecialchars($treino['grupo_muscular']) . "</p>";
 
@@ -205,22 +205,9 @@ require 'security.php';
                 echo "<p><strong>Repetições:</strong> " . htmlspecialchars($treino['repeticoes']) . "</p>";
 
                 echo "<p><strong>Carga:</strong> " . htmlspecialchars($treino['carga']) . " kg</p>";
+                echo "<p><strong>Cliente:</strong> " . htmlspecialchars($treino['nome_cliente']) . "</p>";
 
-                $sqlCliente = "SELECT nome FROM cliente WHERE id_cliente = :id_cliente";
-                $stmtCliente = $pdo->prepare($sqlCliente);
-                $stmtCliente->bindParam(':id_cliente', $treino['id_cliente'], PDO::PARAM_INT);
-                $stmtCliente->execute();
-                $cliente = $stmtCliente->fetch(PDO::FETCH_ASSOC);
-
-                echo "<p><strong>Cliente:</strong> " . htmlspecialchars($cliente['nome']) . "</p>";
-
-                $sqlFuncionario = "SELECT nome FROM funcionário WHERE id_funcionario = :id_funcionario";
-                $stmtFuncionario = $pdo->prepare($sqlFuncionario);
-                $stmtFuncionario->bindParam(':id_funcionario', $treino['id_funcionario'], PDO::PARAM_INT);
-                $stmtFuncionario->execute();
-                $funcionario = $stmtFuncionario->fetch(PDO::FETCH_ASSOC);
-
-                echo "<p><strong>Funcionário:</strong> " . htmlspecialchars($funcionario['nome']) . "</p>";
+                echo "<p><strong>Funcionário:</strong> " . htmlspecialchars($treino['nome_funcionario']) . "</p>";
 
                 echo "<div class='acoes'>";
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 08, 2026 at 07:57 PM
+-- Generation Time: Jun 09, 2026 at 03:30 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -224,8 +224,8 @@ CREATE TABLE `exercícios` (
 INSERT INTO `exercícios` (`id_exercicio`, `nome`, `grupo_muscular`) VALUES
 (1, 'Supino Reto', 'Peito'),
 (2, 'Cachorro Olhando para Baixo (Adho Mukha Svanasana)', 'Costas e Pernas'),
-(5, 'Agachamento Livre', 'Pernas'),
-(7, 'Postura da Montanha (Tadasana)', 'Corpo Inteiro');
+(5, 'Agachamento Livre', ''),
+(7, 'Postura da Montanha (Tadasana)', '');
 
 -- --------------------------------------------------------
 
@@ -449,7 +449,8 @@ INSERT INTO `treinos` (`id_treino`, `id_cliente`, `id_funcionario`, `data_inicio
 (1, 6, 8, '2026-06-10', 'Treino A - Peito e Tríceps', '18:30:00'),
 (2, 1, 9, '2026-06-10', 'Yoga Flexibilidade', '17:30:00'),
 (5, 7, 10, '2026-06-10', 'CrossFit Iniciante', '13:00:00'),
-(7, 9, 9, '2026-06-10', 'Yoga Básico Iniciante', '08:00:00');
+(7, 9, 9, '2026-06-10', 'Yoga Básico Iniciante', '08:00:00'),
+(8, 1, 9, '2026-06-12', 'Yoga Básico Iniciante', '17:30:00');
 
 -- --------------------------------------------------------
 
@@ -474,7 +475,8 @@ INSERT INTO `treinos_exercícios` (`id_treino_exercicio`, `id_treino`, `id_exerc
 (1, 1, 1, 4, 12, 29),
 (2, 2, 2, 4, 1, 0),
 (4, 5, 5, 3, 15, 30),
-(6, 7, 7, 2, 10, 0);
+(6, 7, 7, 2, 10, 0),
+(7, 8, 7, 2, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -726,7 +728,7 @@ ALTER TABLE `estoque`
 -- AUTO_INCREMENT for table `exercícios`
 --
 ALTER TABLE `exercícios`
-  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `faturamento_mensal`
@@ -798,13 +800,13 @@ ALTER TABLE `servicos`
 -- AUTO_INCREMENT for table `treinos`
 --
 ALTER TABLE `treinos`
-  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `treinos_exercícios`
 --
 ALTER TABLE `treinos_exercícios`
-  MODIFY `id_treino_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_treino_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `venda`

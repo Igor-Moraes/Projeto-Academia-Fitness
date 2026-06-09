@@ -86,7 +86,6 @@
     $estado = $_POST['estado'];
     $complemento = $_POST['complemento'];
     $genero = $_POST['genero'];
-    $foto = $_FILES['foto'];
     $data_nascimento = $_POST['data_nascimento'];
     $senha = $_POST['senha'];
 

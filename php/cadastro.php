@@ -150,8 +150,6 @@
                     <option value="feminino">Feminino</option>
                     <option value="outro">Outro</option>
                 </select>
-                <label for="foto">Foto (Opcional):</label>
-                <input type="file" id="foto" name="foto" accept="image/*">
                 <label for="data_nascimento">Data de Nascimento:</label>
                 <input type="date" id="data_nascimento" name="data_nascimento" required>
                 <label for="senha">Senha:</label>
