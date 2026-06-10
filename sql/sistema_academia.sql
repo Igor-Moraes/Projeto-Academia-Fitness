@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 02, 2026 at 06:58 PM
+-- Generation Time: Jun 10, 2026 at 02:02 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -47,7 +47,7 @@ CREATE TABLE `avaliacao` (
   `peso` decimal(5,2) NOT NULL,
   `altura` decimal(4,2) NOT NULL,
   `percentual_gordura` decimal(5,2) NOT NULL,
-  `observacoes` text NOT NULL
+  `observacoes` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -58,11 +58,11 @@ CREATE TABLE `avaliacao` (
 
 CREATE TABLE `cliente` (
   `id_cliente` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `cpf` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `data_nascimento` date NOT NULL,
   `telefone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `genero` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `modalidade` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `id_endereco` int NOT NULL,
@@ -80,7 +80,9 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `cpf`, `data_nascimento`, `telefone
 (6, 'Ronaldo Nazário', '123.321.321-32', '2002-02-02', '55+ (32) 99973-8012', 'ronaldofenomeno@gmail.com', 'masculino', 'musculacao', 19, NULL),
 (7, 'Vergil ', '399.422.780-10', '1981-12-02', '55+ (32) 99942-3214', 'vergilyamato@gmail.com', 'masculino', 'crossfit', 20, NULL),
 (9, 'Leon S. Kennedy', '313.402.780-10', '1999-03-04', '55+ (32) 99923-8057', 'leonardopolicial@gmail.com', 'masculino', 'yoga', 22, NULL),
-(10, 'Harry Kane da Silva', '999.402.780-10', '1989-09-06', '55+ (32) 99973-9129', 'kanefuracao@gmail.com', 'masculino', 'nutricionista', 23, NULL);
+(10, 'Harry Kane da Silva', '999.402.780-11', '1989-09-06', '55+ (32) 99973-9129', 'kanefuracao@gmail.com', 'masculino', 'nutricionista', 23, NULL),
+(15, 'Matheus da Silva', '399.422.780-31', '2000-02-10', '+5532999703031', 'matheus@gmail.com', 'masculino', 'musculacao', 30, NULL),
+(16, 'IGOR CARVALHO DE MORAES', '123.321.321-32', '2026-06-02', '32999702829', 'igorcdemoraes@gmail.com', 'Masculino', 'Musculação', 31, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,7 @@ CREATE TABLE `credenciais` (
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `senha` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_funcionario` int DEFAULT NULL,
-  `template_biometrico` varchar(10) DEFAULT NULL
+  `template_biometrico` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -113,7 +115,12 @@ INSERT INTO `credenciais` (`id_credencial`, `id_cliente`, `email`, `senha`, `id_
 (9, 6, 'ronaldofenomeno@gmail.com', '$2y$10$ysnoXSgpPlQeNT5ZGlB6E./wQrwMfoT4cVSw8EvQPRDQe60dDcIHi', NULL, NULL),
 (10, 7, 'vergilyamato@gmail.com', '$2y$10$fjxB2E1qzyeTtwHLebX4ieG6jPtQTzNXPUJCHkbXh7JA4NVJid972', NULL, NULL),
 (12, 9, 'leonardopolicial@gmail.com', '$2y$10$jL4II2RifDhWywd5z6QhyulGzN2J1oDSYbb7BmtrVxqTGf9.Mebqa', NULL, NULL),
-(13, 10, 'kanefuracao@gmail.com', '$2y$10$mDfhE/UWeKk5HxmDGPVZf.9gPhFJRirVlx9wE4vXHiPeFv882FEGW', NULL, NULL);
+(13, 10, 'kanefuracao@gmail.com', '$2y$10$mDfhE/UWeKk5HxmDGPVZf.9gPhFJRirVlx9wE4vXHiPeFv882FEGW', NULL, NULL),
+(14, NULL, 'willianpersonal@gmail.com\r\n', 'admin1234', 8, NULL),
+(15, NULL, 'yuricalmozen@gmail.com\r\n', 'admin1234', 9, NULL),
+(16, NULL, 'juliomonstro@gmail.com\r\n', 'admin1234', 10, NULL),
+(17, NULL, 'claricedasfontes@gmail.com\r\n', 'admin1234', 11, NULL),
+(21, 15, 'matheus@gmail.com', 'matheus123', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -123,13 +130,13 @@ INSERT INTO `credenciais` (`id_credencial`, `id_cliente`, `email`, `senha`, `id_
 
 CREATE TABLE `endereco` (
   `id_endereco` int NOT NULL,
-  `rua` varchar(255) NOT NULL,
+  `rua` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `bairro` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `cep` varchar(9) NOT NULL,
+  `cep` varchar(9) COLLATE utf8mb4_general_ci NOT NULL,
   `cidade` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `estado` varchar(50) NOT NULL,
+  `estado` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `numero_casa` int NOT NULL,
-  `complemento` varchar(50) DEFAULT NULL
+  `complemento` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -147,7 +154,12 @@ INSERT INTO `endereco` (`id_endereco`, `rua`, `bairro`, `cep`, `cidade`, `estado
 (19, 'Parque Gonçalves Lêdo', 'Farol', '57051-340', 'Maceió', 'AL', 3123, 'casa'),
 (20, 'Quadra EQ 416/516 Bloco B', 'Santa Maria', '72546-332', 'Brasília', 'DF', 2, 'Apartamento'),
 (22, 'Rua J', 'Conjunto Habitacional Cidade de Deus', '78734-264', 'Rondonópolis', 'MT', 3132, 'casa'),
-(23, 'Rua Betânia', 'Nova Esperança', '69915-240', 'Rio Branco', 'AC', 9, 'casa');
+(23, 'Rua Betânia', 'Nova Esperança', '69915-240', 'Rio Branco', 'AC', 9, 'casa'),
+(24, 'Rua Alvaro Franca', 'Sol Nascente', '36774406', 'Cataguases', 'MG', 351, 'casa'),
+(25, 'Rua Alvaro Franca', 'Sol Nascente', '36774406', 'Cataguases', 'MG', 690, 'casa'),
+(26, 'Parque Gonçalves ', 'Farol', '57051-340', 'Maceió', 'AL', 1020, 'apartamento'),
+(30, 'Rua Antônio Rodrigues Gomes', 'Ibraim Mendonça', '36771-120', 'Cataguases', 'MG', 3512, 'casa'),
+(31, 'Rua Alvaro Franca', 'Sol Nascente', '36774406', '36770000', 'MG', 351, 'casa');
 
 -- --------------------------------------------------------
 
@@ -157,9 +169,9 @@ INSERT INTO `endereco` (`id_endereco`, `rua`, `bairro`, `cep`, `cidade`, `estado
 
 CREATE TABLE `equipamentos` (
   `id_equipamento` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `data_aquisicao` date NOT NULL,
   `id_fornecedor` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -172,9 +184,19 @@ CREATE TABLE `equipamentos` (
 
 CREATE TABLE `especialidade` (
   `id_especialidade` int NOT NULL,
-  `tipo` varchar(50) NOT NULL,
-  `data_emissão` date NOT NULL
+  `tipo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `especialidade`
+--
+
+INSERT INTO `especialidade` (`id_especialidade`, `tipo`) VALUES
+(1, 'Musculação'),
+(2, 'Yoga'),
+(3, 'Crossfit'),
+(4, 'Nutrição'),
+(5, 'Desenvolvimento Web');
 
 -- --------------------------------------------------------
 
@@ -196,9 +218,20 @@ CREATE TABLE `estoque` (
 
 CREATE TABLE `exercícios` (
   `id_exercicio` int NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `grupo_muscular` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `exercícios`
+--
+
+INSERT INTO `exercícios` (`id_exercicio`, `nome`, `grupo_muscular`) VALUES
+(1, 'Supino Reto', ''),
+(2, 'Cachorro Olhando para Baixo (Adho Mukha Svanasana)', 'Costas e Pernas'),
+(5, 'Agachamento Livre', ''),
+(7, 'Postura da Montanha (Tadasana)', ''),
+(9, 'Puxada Frontal', '');
 
 -- --------------------------------------------------------
 
@@ -208,7 +241,7 @@ CREATE TABLE `exercícios` (
 
 CREATE TABLE `faturamento_mensal` (
   `id_faturamento` int NOT NULL,
-  `mes_referencia` varchar(7) NOT NULL,
+  `mes_referencia` varchar(7) COLLATE utf8mb4_general_ci NOT NULL,
   `valor_total` decimal(10,2) NOT NULL,
   `data_registro` date NOT NULL,
   `id_cliente` int NOT NULL,
@@ -223,7 +256,7 @@ CREATE TABLE `faturamento_mensal` (
 
 CREATE TABLE `forma_pagamento` (
   `id_formaP` int NOT NULL,
-  `tipo` varchar(10) NOT NULL
+  `tipo` varchar(10) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -234,10 +267,10 @@ CREATE TABLE `forma_pagamento` (
 
 CREATE TABLE `fornecedor` (
   `id_fornecedor` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `cnpj` varchar(20) NOT NULL,
-  `telefone` varchar(20) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cnpj` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `endereco` int NOT NULL,
   `produtos_fornecidos` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -261,12 +294,12 @@ CREATE TABLE `funcionario_servicos` (
 
 CREATE TABLE `funcionário` (
   `id_funcionario` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
-  `telefone` varchar(13) NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cpf` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telefone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `data_nascimento` date NOT NULL,
   `genero` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `id_endereco` int NOT NULL,
   `id_especialidade` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -276,11 +309,15 @@ CREATE TABLE `funcionário` (
 --
 
 INSERT INTO `funcionário` (`id_funcionario`, `nome`, `cpf`, `telefone`, `data_nascimento`, `genero`, `email`, `id_endereco`, `id_especialidade`) VALUES
-(1, 'Rodrigo Pereira Silva', '94919631049', '553298848108', '2007-04-18', 'Masculino', 'rodrigopsilva@gmail.com', 2, NULL),
-(4, 'Igor Moraes', '94947631049', '553299702829', '2007-02-27', 'Masculino', 'Igordaerika@gmail.com', 5, NULL),
-(5, 'Marllon Marques', '10947631049', '5528999336984', '2005-01-01', 'Masculino', 'Marllonabacaxifilho@gmail.com', 4, NULL),
-(6, 'Leandro Evangelista', '10941231049', '553299575377', '2007-02-18', 'Masculino', 'ProtestoEvangelista@gmail.com', 6, NULL),
-(7, 'Ana Julia de Paiva', '10941231067', '553284685019', '2007-09-10', 'Masculino', 'CasadaDoLol@gmail.com', 7, NULL);
+(1, 'Rodrigo Pereira Silva', '94919631049', '553298848108', '2007-04-18', 'Masculino', 'rodrigopsilva@gmail.com', 2, 5),
+(4, 'Igor Moraes', '94947631049', '553299702829', '2007-02-27', 'Masculino', 'Igordaerika@gmail.com', 5, 5),
+(5, 'Marllon Marques', '10947631049', '5528999336984', '2005-01-01', 'Masculino', 'Marllonabacaxifilho@gmail.com', 4, 5),
+(6, 'Leandro Evangelista', '10941231049', '553299575377', '2007-02-18', 'Masculino', 'ProtestoEvangelista@gmail.com', 6, 5),
+(7, 'Ana Julia de Paiva', '10941231067', '553284685019', '2007-09-10', 'Masculino', 'CasadaDoLol@gmail.com', 7, 5),
+(8, '\nWilliam Bonner', '313.312.431-32', '55+ (32)99912-4312', '1999-02-20', 'Masculino', 'willianpersonal@gmail.com', 25, 1),
+(9, 'Yuri Zen', '313.794.431-32', '55+ (32)99943-4112', '1980-02-20', 'Masculino', 'yuricalmozen@gmail.com', 5, 2),
+(10, 'Julio Borges', '313.794.898-32', '55+ (32)99943-9730', '1990-02-20', 'Masculino', 'juliomonstro@gmail.com', 26, 3),
+(11, 'Clarice Fontes', '631.794.898-32', '55+ (32)99913-9730', '2002-02-20', 'Feminino', 'claricedasfontes@gmail.com', 20, 4);
 
 -- --------------------------------------------------------
 
@@ -308,7 +345,7 @@ CREATE TABLE `matrícula` (
   `id_plano` int NOT NULL,
   `data_inicio` date NOT NULL,
   `data_fim` date NOT NULL,
-  `status` varchar(60) NOT NULL
+  `status` varchar(60) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -322,7 +359,7 @@ CREATE TABLE `movimentacao_estoque` (
   `id_produto` int NOT NULL,
   `quantidade` int NOT NULL,
   `data_hora` date NOT NULL,
-  `tipo_movimento` varchar(15) NOT NULL
+  `tipo_movimento` varchar(15) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -338,7 +375,7 @@ CREATE TABLE `pagamento` (
   `id_forma` int NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   `data_pagamento` date NOT NULL,
-  `status` varchar(15) NOT NULL
+  `status` varchar(15) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -349,10 +386,10 @@ CREATE TABLE `pagamento` (
 
 CREATE TABLE `plano` (
   `id_plano` int NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `valor` int NOT NULL,
   `duracao` date NOT NULL,
-  `descricao` varchar(255) NOT NULL
+  `descricao` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -374,10 +411,10 @@ CREATE TABLE `plano_serviços` (
 
 CREATE TABLE `produto` (
   `id_produto` int NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `nome` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `preco` int NOT NULL,
-  `descricao` varchar(100) NOT NULL,
-  `modelo` varchar(255) NOT NULL,
+  `descricao` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `modelo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `cor` int DEFAULT NULL,
   `gramatura` int DEFAULT NULL,
   `id_estoque` int NOT NULL
@@ -391,8 +428,8 @@ CREATE TABLE `produto` (
 
 CREATE TABLE `servicos` (
   `id_servicos` int NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `descricao` varchar(255) NOT NULL
+  `nome` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `descricao` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -406,9 +443,20 @@ CREATE TABLE `treinos` (
   `id_cliente` int NOT NULL,
   `id_funcionario` int NOT NULL,
   `data_inicio` date NOT NULL,
-  `nome_treino` varchar(50) DEFAULT NULL,
+  `nome_treino` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `horario` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `treinos`
+--
+
+INSERT INTO `treinos` (`id_treino`, `id_cliente`, `id_funcionario`, `data_inicio`, `nome_treino`, `horario`) VALUES
+(1, 6, 8, '2026-06-10', 'Treino A - Peito e Tríceps', '18:30:00'),
+(2, 1, 9, '2026-06-10', 'Yoga Flexibilidade', '17:30:00'),
+(5, 7, 10, '2026-06-10', 'CrossFit Iniciante', '13:00:00'),
+(7, 9, 9, '2026-06-10', 'Yoga Básico Iniciante', '08:00:00'),
+(8, 1, 9, '2026-06-12', 'Yoga Básico Iniciante', '17:30:00');
 
 -- --------------------------------------------------------
 
@@ -417,12 +465,24 @@ CREATE TABLE `treinos` (
 --
 
 CREATE TABLE `treinos_exercícios` (
+  `id_treino_exercicio` int NOT NULL,
   `id_treino` int NOT NULL,
   `id_exercicio` int NOT NULL,
   `series` int NOT NULL,
   `repeticoes` int NOT NULL,
   `carga` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `treinos_exercícios`
+--
+
+INSERT INTO `treinos_exercícios` (`id_treino_exercicio`, `id_treino`, `id_exercicio`, `series`, `repeticoes`, `carga`) VALUES
+(1, 1, 1, 5, 12, 29),
+(2, 2, 2, 4, 1, 0),
+(4, 5, 5, 3, 15, 30),
+(6, 7, 7, 2, 10, 0),
+(7, 8, 7, 3, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -607,6 +667,7 @@ ALTER TABLE `treinos`
 -- Indexes for table `treinos_exercícios`
 --
 ALTER TABLE `treinos_exercícios`
+  ADD PRIMARY KEY (`id_treino_exercicio`),
   ADD KEY `id_treino` (`id_treino`),
   ADD KEY `id_exercicio` (`id_exercicio`);
 
@@ -637,19 +698,19 @@ ALTER TABLE `avaliacao`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `credenciais`
 --
 ALTER TABLE `credenciais`
-  MODIFY `id_credencial` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_credencial` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id_endereco` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_endereco` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `equipamentos`
@@ -661,7 +722,7 @@ ALTER TABLE `equipamentos`
 -- AUTO_INCREMENT for table `especialidade`
 --
 ALTER TABLE `especialidade`
-  MODIFY `id_especialidade` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_especialidade` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `estoque`
@@ -673,7 +734,7 @@ ALTER TABLE `estoque`
 -- AUTO_INCREMENT for table `exercícios`
 --
 ALTER TABLE `exercícios`
-  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `faturamento_mensal`
@@ -697,7 +758,7 @@ ALTER TABLE `fornecedor`
 -- AUTO_INCREMENT for table `funcionário`
 --
 ALTER TABLE `funcionário`
-  MODIFY `id_funcionario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_funcionario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `itens_venda`
@@ -745,7 +806,13 @@ ALTER TABLE `servicos`
 -- AUTO_INCREMENT for table `treinos`
 --
 ALTER TABLE `treinos`
-  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_treino` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `treinos_exercícios`
+--
+ALTER TABLE `treinos_exercícios`
+  MODIFY `id_treino_exercicio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `venda`
@@ -867,6 +934,8 @@ ALTER TABLE `treinos`
 -- Constraints for table `treinos_exercícios`
 --
 ALTER TABLE `treinos_exercícios`
+  ADD CONSTRAINT `fk_exercicio` FOREIGN KEY (`id_exercicio`) REFERENCES `exercícios` (`id_exercicio`),
+  ADD CONSTRAINT `fk_treino` FOREIGN KEY (`id_treino`) REFERENCES `treinos` (`id_treino`),
   ADD CONSTRAINT `fk_treinos_exercicios_E` FOREIGN KEY (`id_exercicio`) REFERENCES `exercícios` (`id_exercicio`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `fk_treinos_exercicios_T` FOREIGN KEY (`id_treino`) REFERENCES `treinos` (`id_treino`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 

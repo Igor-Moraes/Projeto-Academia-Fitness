@@ -85,7 +85,6 @@ if (isset($_POST['cadastrar'])) {
 
         header("Location: clientes.php");
         exit;
-
     } catch (Exception $e) {
 
         $pdo->rollBack();
@@ -115,8 +114,6 @@ if (isset($_POST['salvar'])) {
 
     header("Location: clientes.php");
     exit;
-
-
 }
 
 if (isset($_GET['excluir'])) {
@@ -139,8 +136,50 @@ if (isset($_GET['excluir'])) {
 
         if ($cliente) {
 
+            // Exclui credenciais do cliente
+            $sql = "DELETE FROM credenciais
+                WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
             // Exclui acessos do cliente
             $sql = "DELETE FROM acesso
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui avaliações do cliente
+            $sql = "DELETE FROM avaliacao
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui faturamentos do cliente
+            $sql = "DELETE FROM faturamento_mensal
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui matrícula do cliente
+            $sql = "DELETE FROM matrícula
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui treinos do cliente
+            $sql = "DELETE FROM treinos
+                    WHERE id_cliente = :id";
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['id' => $id_cliente]);
+
+            // Exclui vendas do cliente
+            $sql = "DELETE FROM venda
                     WHERE id_cliente = :id";
 
             $stmt = $pdo->prepare($sql);
@@ -164,12 +203,10 @@ if (isset($_GET['excluir'])) {
         }
 
         $pdo->commit();
-
     } catch (Exception $e) {
 
         $pdo->rollBack();
         die($e->getMessage());
-
     }
 
     header("Location: clientes.php");
@@ -607,7 +644,6 @@ if (isset($_GET['excluir'])) {
                         echo "</tr>";
 
                         echo "</form>";
-
                     } else {
 
                         echo "<tr>";
@@ -638,8 +674,6 @@ Excluir
 </td>";
                         echo "</tr>";
                     }
-
-
                 }
 
                 ?>

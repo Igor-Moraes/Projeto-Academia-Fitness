@@ -135,8 +135,6 @@ try {
     $id_cliente = $pdo->lastInsertId();
 
     // CREDENCIAIS
-    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-
     $sqlCredenciais = "INSERT INTO credenciais
     (email, senha, id_cliente)
     VALUES
@@ -146,7 +144,7 @@ try {
 
     $stmtCredenciais->execute([
         ':email' => $email,
-        ':senha' => $senhaHash,
+        ':senha' => $senha,
         ':id_cliente' => $id_cliente
     ]);
 

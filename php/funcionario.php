@@ -240,7 +240,7 @@ require 'security.php';
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
-            }
+            }       
             ?>
 
     </main>
